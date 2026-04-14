@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="components.css">
+    <link rel="stylesheet" href="sections.css">
     <link rel="stylesheet" href="animations.css">
 </head>
 <body>
@@ -99,138 +99,137 @@
         <div class="content-area">
             <!-- DASHBOARD SECTION -->
             <section class="page-section active" data-section="dashboard">
-                <!-- MISSION CONTROL HERO -->
-                <div class="mission-control-hero">
-                    <div class="mission-header">
-                        <div class="mission-title">
-                            <h2>Mission Control</h2>
-                            <p>System Status: <span class="status-live">● ONLINE</span></p>
-                        </div>
-                        <div class="mission-stats">
-                            <div class="mission-stat-item">
-                                <span class="stat-label">Uptime</span>
-                                <span class="stat-value">847h</span>
-                            </div>
-                            <div class="mission-stat-item">
-                                <span class="stat-label">Efficiency</span>
-                                <span class="stat-value">94%</span>
-                            </div>
-                            <div class="mission-stat-item">
-                                <span class="stat-label">Health</span>
-                                <span class="stat-value">Excellent</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="mission-grid">
-                        <div class="mission-panel productivity">
-                            <div class="panel-label">Productivity Index</div>
-                            <div class="panel-display">
-                                <div class="radial-progress" style="--progress: 78">
-                                    <svg viewBox="0 0 120 120">
-                                        <circle cx="60" cy="60" r="54" class="progress-bg"></circle>
-                                        <circle cx="60" cy="60" r="54" class="progress-ring"></circle>
-                                    </svg>
-                                    <div class="progress-text">78%</div>
+                <div class="section-dashboard">
+                    <!-- MISSION CONTROL CENTER -->
+                    <div class="dashboard-hero-cinematic">
+                        <div class="hero-main-panel">
+                            <div class="hero-pulse-ring"></div>
+                            <div class="hero-content">
+                                <div class="hero-status-row">
+                                    <h2>Mission Control</h2>
+                                    <div class="hero-live-indicator">
+                                        <span class="pulse-dot"></span>
+                                        <span>ONLINE</span>
+                                    </div>
+                                </div>
+                                <div class="hero-system-metrics">
+                                    <div class="metric-block">
+                                        <span class="metric-label">Productivity</span>
+                                        <span class="metric-value">78%</span>
+                                    </div>
+                                    <div class="metric-block">
+                                        <span class="metric-label">Uptime</span>
+                                        <span class="metric-value">847h</span>
+                                    </div>
+                                    <div class="metric-block">
+                                        <span class="metric-label">Energy</span>
+                                        <span class="metric-value">High</span>
+                                    </div>
+                                    <div class="metric-block">
+                                        <span class="metric-label">Status</span>
+                                        <span class="metric-value">Excellent</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="mission-panel focus">
-                            <div class="panel-label">Focus Time</div>
-                            <div class="panel-display">
-                                <div class="time-large">8h 42m</div>
-                                <div class="time-meta">Remaining today</div>
-                            </div>
-                        </div>
-
-                        <div class="mission-panel streak">
-                            <div class="panel-label">Active Streak</div>
-                            <div class="panel-display">
-                                <div class="streak-flame">🔥</div>
-                                <div class="streak-num">15</div>
-                                <div class="streak-unit">days</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- DASHBOARD OVERVIEW -->
-                <div class="dashboard-overview">
-                    <div class="overview-card">
-                        <div class="card-header">
-                            <h3><i class="fas fa-tasks"></i> Overview</h3>
-                        </div>
-                        <div class="card-body">
-                            <div class="stat-row">
-                                <span>Active Tasks</span>
-                                <span class="value">12</span>
-                            </div>
-                            <div class="stat-row">
-                                <span>Completed Today</span>
-                                <span class="value">8</span>
-                            </div>
-                            <div class="stat-row">
-                                <span>In Progress</span>
-                                <span class="value">4</span>
-                            </div>
-                            <div class="stat-row">
-                                <span>Energy Level</span>
-                                <span class="value energy-high">High</span>
+                        <!-- RADIAL PROGRESS -->
+                        <div class="hero-radial-section">
+                            <div class="radial-progress-container">
+                                <svg viewBox="0 0 180 180" class="radial-svg">
+                                    <circle cx="90" cy="90" r="80" class="radial-bg"></circle>
+                                    <circle cx="90" cy="90" r="80" class="radial-progress" style="--progress: 78"></circle>
+                                </svg>
+                                <div class="radial-center">
+                                    <div class="radial-value">78%</div>
+                                    <div class="radial-label">Today</div>
+                                </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="overview-card">
-                        <div class="card-header">
-                            <h3><i class="fas fa-clock"></i> Activity</h3>
-                        </div>
-                        <div class="card-body activity-feed">
-                            <div class="activity-dot"></div>
-                            <div class="activity-item">
-                                <div class="activity-title">System Running</div>
-                                <div class="activity-time">Now</div>
+                    <!-- DASHBOARD GRID -->
+                    <div class="dashboard-grid-layout">
+                        <div class="dashboard-overview-card">
+                            <div class="overview-header">
+                                <h3><i class="fas fa-activity"></i> System Activity</h3>
                             </div>
-
-                            <div class="activity-dot"></div>
-                            <div class="activity-item">
-                                <div class="activity-title">Data Synced</div>
-                                <div class="activity-time">2 min ago</div>
-                            </div>
-
-                            <div class="activity-dot"></div>
-                            <div class="activity-item">
-                                <div class="activity-title">Backup Completed</div>
-                                <div class="activity-time">15 min ago</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="overview-card">
-                        <div class="card-header">
-                            <h3><i class="fas fa-network-wired"></i> System Health</h3>
-                        </div>
-                        <div class="card-body system-health">
-                            <div class="health-indicator">
-                                <span>CPU</span>
-                                <div class="health-bar">
-                                    <div class="health-fill" style="width: 45%"></div>
+                            <div class="overview-timeline">
+                                <div class="timeline-marker">
+                                    <div class="marker-dot"></div>
+                                    <div class="marker-content">
+                                        <div class="marker-title">System Running</div>
+                                        <div class="marker-time">Now</div>
+                                    </div>
                                 </div>
-                                <span class="health-value">45%</span>
-                            </div>
-                            <div class="health-indicator">
-                                <span>Memory</span>
-                                <div class="health-bar">
-                                    <div class="health-fill" style="width: 62%"></div>
+                                <div class="timeline-marker">
+                                    <div class="marker-dot"></div>
+                                    <div class="marker-content">
+                                        <div class="marker-title">Data Synced</div>
+                                        <div class="marker-time">2 min</div>
+                                    </div>
                                 </div>
-                                <span class="health-value">62%</span>
-                            </div>
-                            <div class="health-indicator">
-                                <span>Storage</span>
-                                <div class="health-bar">
-                                    <div class="health-fill" style="width: 38%"></div>
+                                <div class="timeline-marker">
+                                    <div class="marker-dot"></div>
+                                    <div class="marker-content">
+                                        <div class="marker-title">Backup Complete</div>
+                                        <div class="marker-time">15 min</div>
+                                    </div>
                                 </div>
-                                <span class="health-value">38%</span>
+                            </div>
+                        </div>
+
+                        <div class="dashboard-stats-grid">
+                            <div class="stat-tile">
+                                <div class="stat-icon"><i class="fas fa-tasks"></i></div>
+                                <div class="stat-data">
+                                    <span class="stat-value">12</span>
+                                    <span class="stat-label">Active</span>
+                                </div>
+                            </div>
+                            <div class="stat-tile">
+                                <div class="stat-icon"><i class="fas fa-check-circle"></i></div>
+                                <div class="stat-data">
+                                    <span class="stat-value">8</span>
+                                    <span class="stat-label">Complete</span>
+                                </div>
+                            </div>
+                            <div class="stat-tile">
+                                <div class="stat-icon"><i class="fas fa-fire"></i></div>
+                                <div class="stat-data">
+                                    <span class="stat-value">15</span>
+                                    <span class="stat-label">Streak</span>
+                                </div>
+                            </div>
+                            <div class="stat-tile">
+                                <div class="stat-icon"><i class="fas fa-zap"></i></div>
+                                <div class="stat-data">
+                                    <span class="stat-value">6h</span>
+                                    <span class="stat-label">Focus</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="dashboard-health-monitor">
+                            <div class="health-header">
+                                <h3><i class="fas fa-heartbeat"></i> Health Monitor</h3>
+                            </div>
+                            <div class="health-indicators">
+                                <div class="health-item">
+                                    <span class="health-name">CPU</span>
+                                    <div class="health-bar"><div class="health-fill" style="width: 45%"></div></div>
+                                    <span class="health-pct">45%</span>
+                                </div>
+                                <div class="health-item">
+                                    <span class="health-name">Memory</span>
+                                    <div class="health-bar"><div class="health-fill" style="width: 62%"></div></div>
+                                    <span class="health-pct">62%</span>
+                                </div>
+                                <div class="health-item">
+                                    <span class="health-name">Storage</span>
+                                    <div class="health-bar"><div class="health-fill" style="width: 38%"></div></div>
+                                    <span class="health-pct">38%</span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -239,96 +238,96 @@
 
             <!-- ACTIONS SECTION -->
             <section class="page-section" data-section="actions">
-                <!-- COMMAND CENTER HERO -->
-                <div class="command-center-hero">
-                    <div class="command-header">
-                        <div class="command-status">
-                            <h2>Command Center</h2>
-                            <div class="status-indicator">
-                                <span class="pulse-dot"></span>
-                                <span class="status-text">12 ACTIVE</span>
+                <div class="section-actions">
+                    <!-- COMMAND STATION HEADER -->
+                    <div class="actions-command-header">
+                        <div class="command-alert">
+                            <h2>Command Station</h2>
+                            <div class="active-count">
+                                <span class="pulse-indicator"></span>
+                                <span>12 ACTIVE</span>
                             </div>
                         </div>
-                        <div class="command-metrics">
-                            <div class="metric-box high">
-                                <span>High Priority</span>
-                                <strong>3</strong>
+                        <div class="priority-summary">
+                            <div class="priority-box high">
+                                <span class="priority-count">3</span>
+                                <span class="priority-label">High</span>
                             </div>
-                            <div class="metric-box medium">
-                                <span>Medium Priority</span>
-                                <strong>7</strong>
+                            <div class="priority-box medium">
+                                <span class="priority-count">7</span>
+                                <span class="priority-label">Medium</span>
                             </div>
-                            <div class="metric-box low">
-                                <span>Low Priority</span>
-                                <strong>2</strong>
+                            <div class="priority-box low">
+                                <span class="priority-count">2</span>
+                                <span class="priority-label">Low</span>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- ACTION TASK LIST -->
-                <div class="action-task-list">
-                    <div class="action-task high-priority">
-                        <div class="priority-indicator high"></div>
-                        <div class="task-content">
-                            <div class="task-name">Deploy new feature update</div>
-                            <div class="task-meta">Due: Today</div>
+                    <!-- TASK QUEUE -->
+                    <div class="task-queue-container">
+                        <div class="task-queue-item priority-high">
+                            <div class="task-priority-bar high"></div>
+                            <div class="task-details">
+                                <div class="task-title">Deploy new feature update</div>
+                                <div class="task-deadline">Due: Today</div>
+                            </div>
+                            <div class="task-progress-inline">
+                                <div class="progress-mini"><div class="progress-fill" style="width: 75%"></div></div>
+                                <span>75%</span>
+                            </div>
+                            <button class="task-action-btn"><i class="fas fa-play-circle"></i></button>
                         </div>
-                        <div class="task-progress">
-                            <div class="progress-bar"><div class="progress-fill" style="width: 75%"></div></div>
-                            <span class="progress-text">75%</span>
+
+                        <div class="task-queue-item priority-medium">
+                            <div class="task-priority-bar medium"></div>
+                            <div class="task-details">
+                                <div class="task-title">Review quarterly reports</div>
+                                <div class="task-deadline">Due: Tomorrow</div>
+                            </div>
+                            <div class="task-progress-inline">
+                                <div class="progress-mini"><div class="progress-fill" style="width: 40%"></div></div>
+                                <span>40%</span>
+                            </div>
+                            <button class="task-action-btn"><i class="fas fa-play-circle"></i></button>
                         </div>
-                        <button class="action-btn-mini"><i class="fas fa-play"></i></button>
+
+                        <div class="task-queue-item priority-low">
+                            <div class="task-priority-bar low"></div>
+                            <div class="task-details">
+                                <div class="task-title">Organize team resources</div>
+                                <div class="task-deadline">Due: This Week</div>
+                            </div>
+                            <div class="task-progress-inline">
+                                <div class="progress-mini"><div class="progress-fill" style="width: 20%"></div></div>
+                                <span>20%</span>
+                            </div>
+                            <button class="task-action-btn"><i class="fas fa-play-circle"></i></button>
+                        </div>
                     </div>
 
-                    <div class="action-task medium-priority">
-                        <div class="priority-indicator medium"></div>
-                        <div class="task-content">
-                            <div class="task-name">Review quarterly reports</div>
-                            <div class="task-meta">Due: Tomorrow</div>
+                    <!-- ACTION METRICS -->
+                    <div class="actions-metrics-row">
+                        <div class="action-metric-card">
+                            <div class="metric-top">
+                                <i class="fas fa-fire"></i>
+                                <span class="metric-num">15</span>
+                            </div>
+                            <span class="metric-name">Day Streak</span>
                         </div>
-                        <div class="task-progress">
-                            <div class="progress-bar"><div class="progress-fill" style="width: 40%"></div></div>
-                            <span class="progress-text">40%</span>
+                        <div class="action-metric-card">
+                            <div class="metric-top">
+                                <i class="fas fa-chart-line"></i>
+                                <span class="metric-num">92%</span>
+                            </div>
+                            <span class="metric-name">Completion</span>
                         </div>
-                        <button class="action-btn-mini"><i class="fas fa-play"></i></button>
-                    </div>
-
-                    <div class="action-task low-priority">
-                        <div class="priority-indicator low"></div>
-                        <div class="task-content">
-                            <div class="task-name">Organize team resources</div>
-                            <div class="task-meta">Due: This Week</div>
-                        </div>
-                        <div class="task-progress">
-                            <div class="progress-bar"><div class="progress-fill" style="width: 20%"></div></div>
-                            <span class="progress-text">20%</span>
-                        </div>
-                        <button class="action-btn-mini"><i class="fas fa-play"></i></button>
-                    </div>
-                </div>
-
-                <!-- STREAK AND STATS -->
-                <div class="action-stats-section">
-                    <div class="action-stat-card">
-                        <div class="stat-icon"><i class="fas fa-fire"></i></div>
-                        <div class="stat-info">
-                            <div class="stat-number">15</div>
-                            <div class="stat-name">Day Streak</div>
-                        </div>
-                    </div>
-                    <div class="action-stat-card">
-                        <div class="stat-icon"><i class="fas fa-chart-line"></i></div>
-                        <div class="stat-info">
-                            <div class="stat-number">92%</div>
-                            <div class="stat-name">Completion Rate</div>
-                        </div>
-                    </div>
-                    <div class="action-stat-card">
-                        <div class="stat-icon"><i class="fas fa-clock"></i></div>
-                        <div class="stat-info">
-                            <div class="stat-number">47</div>
-                            <div class="stat-name">Total Actions</div>
+                        <div class="action-metric-card">
+                            <div class="metric-top">
+                                <i class="fas fa-clock"></i>
+                                <span class="metric-num">47</span>
+                            </div>
+                            <span class="metric-name">Total Actions</span>
                         </div>
                     </div>
                 </div>
@@ -336,137 +335,140 @@
 
             <!-- HABITS SECTION -->
             <section class="page-section" data-section="habits">
-                <!-- HABIT TRACKER HERO -->
-                <div class="habit-tracker-hero">
-                    <div class="tracker-header">
-                        <h2>Habit Tracker</h2>
-                        <div class="tracker-summary">
-                            <div class="summary-stat">
-                                <span class="summary-label">Active</span>
-                                <span class="summary-value">8</span>
-                            </div>
-                            <div class="summary-stat">
-                                <span class="summary-label">Completion</span>
-                                <span class="summary-value">87%</span>
-                            </div>
-                            <div class="summary-stat">
-                                <span class="summary-label">Longest Streak</span>
-                                <span class="summary-value">23d</span>
-                            </div>
+                <div class="section-habits">
+                    <!-- HABIT TRACKER HEADER -->
+                    <div class="habit-tracker-header">
+                        <div class="tracker-title">
+                            <h2>Habit Tracker</h2>
+                            <p>Consistency tracking system</p>
                         </div>
-                    </div>
-                </div>
-
-                <!-- HABIT CARDS -->
-                <div class="habits-grid">
-                    <div class="habit-card-large">
-                        <div class="habit-card-header">
-                            <div class="habit-icon-large"><i class="fas fa-dumbbell"></i></div>
-                            <div class="habit-card-title">
-                                <h3>Exercise</h3>
-                                <p>Daily workout routine</p>
+                        <div class="tracker-stats">
+                            <div class="tracker-stat">
+                                <span class="tracker-num">8</span>
+                                <span class="tracker-label">Active</span>
                             </div>
-                        </div>
-                        <div class="habit-card-content">
-                            <div class="streak-section">
-                                <div class="streak-badge">12 days</div>
-                                <div class="week-tracker">
-                                    <div class="day-dot completed"></div>
-                                    <div class="day-dot completed"></div>
-                                    <div class="day-dot completed"></div>
-                                    <div class="day-dot completed"></div>
-                                    <div class="day-dot completed"></div>
-                                    <div class="day-dot completed"></div>
-                                    <div class="day-dot"></div>
-                                </div>
+                            <div class="tracker-stat">
+                                <span class="tracker-num">87%</span>
+                                <span class="tracker-label">Complete</span>
                             </div>
-                            <div class="habit-progress">
-                                <div class="progress-bar-large"><div class="progress-fill-large" style="width: 71%"></div></div>
-                                <span class="progress-label">5/7 this week</span>
+                            <div class="tracker-stat">
+                                <span class="tracker-num">23d</span>
+                                <span class="tracker-label">Max Streak</span>
                             </div>
                         </div>
                     </div>
 
-                    <div class="habit-card-large">
-                        <div class="habit-card-header">
-                            <div class="habit-icon-large"><i class="fas fa-book"></i></div>
-                            <div class="habit-card-title">
-                                <h3>Reading</h3>
-                                <p>Daily reading session</p>
-                            </div>
-                        </div>
-                        <div class="habit-card-content">
-                            <div class="streak-section">
-                                <div class="streak-badge">8 days</div>
-                                <div class="week-tracker">
-                                    <div class="day-dot completed"></div>
-                                    <div class="day-dot completed"></div>
-                                    <div class="day-dot completed"></div>
-                                    <div class="day-dot completed"></div>
-                                    <div class="day-dot completed"></div>
-                                    <div class="day-dot completed"></div>
-                                    <div class="day-dot completed"></div>
+                    <!-- HABIT CARDS -->
+                    <div class="habits-container">
+                        <div class="habit-tracking-card">
+                            <div class="habit-header-section">
+                                <div class="habit-icon-circle"><i class="fas fa-dumbbell"></i></div>
+                                <div class="habit-title-section">
+                                    <h3>Exercise</h3>
+                                    <p>Daily routine</p>
                                 </div>
                             </div>
-                            <div class="habit-progress">
-                                <div class="progress-bar-large"><div class="progress-fill-large" style="width: 86%"></div></div>
-                                <span class="progress-label">6/7 this week</span>
+                            <div class="habit-body-section">
+                                <div class="streak-display">
+                                    <span class="streak-badge">12 days</span>
+                                </div>
+                                <div class="week-dots">
+                                    <div class="day-check done"></div>
+                                    <div class="day-check done"></div>
+                                    <div class="day-check done"></div>
+                                    <div class="day-check done"></div>
+                                    <div class="day-check done"></div>
+                                    <div class="day-check done"></div>
+                                    <div class="day-check"></div>
+                                </div>
+                                <div class="habit-progress-large">
+                                    <div class="progress-track"><div class="progress-bar-fill" style="width: 71%"></div></div>
+                                    <span class="progress-text">5/7 this week</span>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="habit-card-large">
-                        <div class="habit-card-header">
-                            <div class="habit-icon-large"><i class="fas fa-moon"></i></div>
-                            <div class="habit-card-title">
-                                <h3>Sleep</h3>
-                                <p>Quality sleep tracking</p>
-                            </div>
-                        </div>
-                        <div class="habit-card-content">
-                            <div class="streak-section">
-                                <div class="streak-badge">23 days</div>
-                                <div class="week-tracker">
-                                    <div class="day-dot completed"></div>
-                                    <div class="day-dot completed"></div>
-                                    <div class="day-dot completed"></div>
-                                    <div class="day-dot completed"></div>
-                                    <div class="day-dot completed"></div>
-                                    <div class="day-dot completed"></div>
-                                    <div class="day-dot completed"></div>
+                        <div class="habit-tracking-card">
+                            <div class="habit-header-section">
+                                <div class="habit-icon-circle"><i class="fas fa-book"></i></div>
+                                <div class="habit-title-section">
+                                    <h3>Reading</h3>
+                                    <p>Daily session</p>
                                 </div>
                             </div>
-                            <div class="habit-progress">
-                                <div class="progress-bar-large"><div class="progress-fill-large" style="width: 100%"></div></div>
-                                <span class="progress-label">7/7 this week</span>
+                            <div class="habit-body-section">
+                                <div class="streak-display">
+                                    <span class="streak-badge">8 days</span>
+                                </div>
+                                <div class="week-dots">
+                                    <div class="day-check done"></div>
+                                    <div class="day-check done"></div>
+                                    <div class="day-check done"></div>
+                                    <div class="day-check done"></div>
+                                    <div class="day-check done"></div>
+                                    <div class="day-check done"></div>
+                                    <div class="day-check done"></div>
+                                </div>
+                                <div class="habit-progress-large">
+                                    <div class="progress-track"><div class="progress-bar-fill" style="width: 86%"></div></div>
+                                    <span class="progress-text">6/7 this week</span>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="habit-card-large">
-                        <div class="habit-card-header">
-                            <div class="habit-icon-large"><i class="fas fa-glass-water"></i></div>
-                            <div class="habit-card-title">
-                                <h3>Hydration</h3>
-                                <p>Daily water intake</p>
-                            </div>
-                        </div>
-                        <div class="habit-card-content">
-                            <div class="streak-section">
-                                <div class="streak-badge">6 days</div>
-                                <div class="week-tracker">
-                                    <div class="day-dot completed"></div>
-                                    <div class="day-dot completed"></div>
-                                    <div class="day-dot completed"></div>
-                                    <div class="day-dot completed"></div>
-                                    <div class="day-dot completed"></div>
-                                    <div class="day-dot completed"></div>
-                                    <div class="day-dot"></div>
+                        <div class="habit-tracking-card">
+                            <div class="habit-header-section">
+                                <div class="habit-icon-circle"><i class="fas fa-moon"></i></div>
+                                <div class="habit-title-section">
+                                    <h3>Sleep</h3>
+                                    <p>Quality tracking</p>
                                 </div>
                             </div>
-                            <div class="habit-progress">
-                                <div class="progress-bar-large"><div class="progress-fill-large" style="width: 71%"></div></div>
-                                <span class="progress-label">5/7 this week</span>
+                            <div class="habit-body-section">
+                                <div class="streak-display">
+                                    <span class="streak-badge">23 days</span>
+                                </div>
+                                <div class="week-dots">
+                                    <div class="day-check done"></div>
+                                    <div class="day-check done"></div>
+                                    <div class="day-check done"></div>
+                                    <div class="day-check done"></div>
+                                    <div class="day-check done"></div>
+                                    <div class="day-check done"></div>
+                                    <div class="day-check done"></div>
+                                </div>
+                                <div class="habit-progress-large">
+                                    <div class="progress-track"><div class="progress-bar-fill" style="width: 100%"></div></div>
+                                    <span class="progress-text">7/7 this week</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="habit-tracking-card">
+                            <div class="habit-header-section">
+                                <div class="habit-icon-circle"><i class="fas fa-glass-water"></i></div>
+                                <div class="habit-title-section">
+                                    <h3>Hydration</h3>
+                                    <p>Daily intake</p>
+                                </div>
+                            </div>
+                            <div class="habit-body-section">
+                                <div class="streak-display">
+                                    <span class="streak-badge">6 days</span>
+                                </div>
+                                <div class="week-dots">
+                                    <div class="day-check done"></div>
+                                    <div class="day-check done"></div>
+                                    <div class="day-check done"></div>
+                                    <div class="day-check done"></div>
+                                    <div class="day-check done"></div>
+                                    <div class="day-check done"></div>
+                                    <div class="day-check"></div>
+                                </div>
+                                <div class="habit-progress-large">
+                                    <div class="progress-track"><div class="progress-bar-fill" style="width: 71%"></div></div>
+                                    <span class="progress-text">5/7 this week</span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -475,95 +477,88 @@
 
             <!-- MONEY SECTION -->
             <section class="page-section" data-section="money">
-                <!-- FINANCE COCKPIT HERO -->
-                <div class="finance-cockpit-hero">
-                    <div class="cockpit-display">
-                        <div class="cockpit-main">
-                            <div class="balance-display">
-                                <span class="balance-label">Total Balance</span>
-                                <span class="balance-value">$5,240.00</span>
-                            </div>
-                            <div class="cockpit-mini-stats">
-                                <div class="cockpit-stat income">
-                                    <span class="cockpit-label">Income</span>
-                                    <span class="cockpit-amount">+$3,500</span>
-                                </div>
-                                <div class="cockpit-stat spending">
-                                    <span class="cockpit-label">Spending</span>
-                                    <span class="cockpit-amount">-$1,820</span>
-                                </div>
-                                <div class="cockpit-stat savings">
-                                    <span class="cockpit-label">Net</span>
-                                    <span class="cockpit-amount">+$1,680</span>
-                                </div>
-                            </div>
+                <div class="section-money">
+                    <!-- FINANCE COCKPIT -->
+                    <div class="finance-cockpit-display">
+                        <div class="balance-main">
+                            <div class="balance-label">Total Balance</div>
+                            <div class="balance-amount">$5,240.00</div>
                         </div>
-                    </div>
-                </div>
-
-                <!-- ACCOUNTS AND BUDGETS -->
-                <div class="money-panels">
-                    <div class="money-panel">
-                        <div class="panel-title">
-                            <h3><i class="fas fa-wallet"></i> Accounts</h3>
-                        </div>
-                        <div class="accounts-list">
-                            <div class="account-block">
-                                <div class="account-header">
-                                    <span class="account-icon"><i class="fas fa-piggy-bank"></i></span>
-                                    <div class="account-details">
-                                        <div class="account-name">Savings</div>
-                                        <div class="account-balance">$4,890</div>
-                                    </div>
-                                </div>
-                                <div class="account-change">+2.4%</div>
+                        <div class="cockpit-flow">
+                            <div class="flow-item income">
+                                <span class="flow-label">Income</span>
+                                <span class="flow-amount">+$3,500</span>
                             </div>
-
-                            <div class="account-block">
-                                <div class="account-header">
-                                    <span class="account-icon"><i class="fas fa-credit-card"></i></span>
-                                    <div class="account-details">
-                                        <div class="account-name">Checking</div>
-                                        <div class="account-balance">$350</div>
-                                    </div>
-                                </div>
-                                <div class="account-change">+1.2%</div>
+                            <div class="flow-divider"></div>
+                            <div class="flow-item spending">
+                                <span class="flow-label">Spending</span>
+                                <span class="flow-amount">-$1,820</span>
+                            </div>
+                            <div class="flow-divider"></div>
+                            <div class="flow-item net">
+                                <span class="flow-label">Net</span>
+                                <span class="flow-amount">+$1,680</span>
                             </div>
                         </div>
                     </div>
 
-                    <div class="money-panel">
-                        <div class="panel-title">
-                            <h3><i class="fas fa-chart-pie"></i> Budget Breakdown</h3>
+                    <!-- MONEY PANELS -->
+                    <div class="money-panels-layout">
+                        <div class="money-panel-accounts">
+                            <div class="panel-label">
+                                <i class="fas fa-wallet"></i>
+                                <h3>Accounts</h3>
+                            </div>
+                            <div class="accounts-stack">
+                                <div class="account-entry">
+                                    <div class="account-left">
+                                        <span class="account-icon-mini"><i class="fas fa-piggy-bank"></i></span>
+                                        <div class="account-info">
+                                            <div class="account-name">Savings</div>
+                                            <div class="account-amt">$4,890</div>
+                                        </div>
+                                    </div>
+                                    <span class="account-change">+2.4%</span>
+                                </div>
+                                <div class="account-entry">
+                                    <div class="account-left">
+                                        <span class="account-icon-mini"><i class="fas fa-credit-card"></i></span>
+                                        <div class="account-info">
+                                            <div class="account-name">Checking</div>
+                                            <div class="account-amt">$350</div>
+                                        </div>
+                                    </div>
+                                    <span class="account-change">+1.2%</span>
+                                </div>
+                            </div>
                         </div>
-                        <div class="budget-blocks">
-                            <div class="budget-block">
-                                <div class="budget-label">
-                                    <span>Food & Dining</span>
-                                    <span class="budget-spent">$420 / $500</span>
-                                </div>
-                                <div class="budget-bar">
-                                    <div class="budget-fill" style="width: 84%"></div>
-                                </div>
-                            </div>
 
-                            <div class="budget-block">
-                                <div class="budget-label">
-                                    <span>Entertainment</span>
-                                    <span class="budget-spent">$240 / $300</span>
-                                </div>
-                                <div class="budget-bar">
-                                    <div class="budget-fill" style="width: 80%"></div>
-                                </div>
+                        <div class="money-panel-budget">
+                            <div class="panel-label">
+                                <i class="fas fa-chart-pie"></i>
+                                <h3>Budget</h3>
                             </div>
-
-                            <div class="budget-block">
-                                <div class="budget-label">
-                                    <span>Transportation</span>
-                                    <span class="budget-spent">$180 / $200</span>
+                            <div class="budget-stack">
+                                <div class="budget-entry">
+                                    <div class="budget-row-top">
+                                        <span class="budget-name">Food & Dining</span>
+                                        <span class="budget-amt">$420 / $500</span>
+                                    </div>
+                                    <div class="budget-progress"><div class="budget-bar" style="width: 84%"></div></div>
                                 </div>
-                                <div class="budget-bar">
-                                    <div class="budget-fill" style="width: 90%"></div>
+                                <div class="budget-entry">
+                                    <div class="budget-row-top">
+                                        <span class="budget-name">Entertainment</span>
+                                        <span class="budget-amt">$240 / $300</span>
+                                    </div>
+                                    <div class="budget-progress"><div class="budget-bar" style="width: 80%"></div></div>
+                                </div>
+                                <div class="budget-entry">
+                                    <div class="budget-row-top">
+                                        <span class="budget-name">Transportation</span>
+                                        <span class="budget-amt">$180 / $200</span>
+                                    </div>
+                                    <div class="budget-progress"><div class="budget-bar" style="width: 90%"></div></div>
                                 </div>
                             </div>
                         </div>
@@ -573,100 +568,96 @@
 
             <!-- SETTINGS SECTION -->
             <section class="page-section" data-section="settings">
-                <!-- SYSTEM SETTINGS HERO -->
-                <div class="system-settings-hero">
-                    <div class="settings-status">
+                <div class="section-settings">
+                    <!-- SETTINGS HEADER -->
+                    <div class="settings-header-minimal">
                         <h2>System Settings</h2>
-                        <div class="system-health-badge">
-                            <span class="health-check">✓</span>
-                            <span>All Systems Optimal</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- SETTINGS PANELS -->
-                <div class="settings-panels">
-                    <div class="settings-panel">
-                        <div class="panel-title">
-                            <i class="fas fa-sliders-h"></i>
-                            <h3>Display & Behavior</h3>
-                        </div>
-                        <div class="settings-items">
-                            <div class="setting-item">
-                                <div class="setting-label">
-                                    <span>Dark Mode</span>
-                                    <span class="setting-desc">Enabled</span>
-                                </div>
-                                <div class="toggle-switch active"></div>
-                            </div>
-                            <div class="setting-item">
-                                <div class="setting-label">
-                                    <span>Animations</span>
-                                    <span class="setting-desc">Smooth transitions</span>
-                                </div>
-                                <div class="toggle-switch active"></div>
-                            </div>
-                            <div class="setting-item">
-                                <div class="setting-label">
-                                    <span>Notifications</span>
-                                    <span class="setting-desc">All enabled</span>
-                                </div>
-                                <div class="toggle-switch active"></div>
-                            </div>
+                        <div class="system-status-badge">
+                            <span class="check-icon">✓</span>
+                            All Systems Optimal
                         </div>
                     </div>
 
-                    <div class="settings-panel">
-                        <div class="panel-title">
-                            <i class="fas fa-lock"></i>
-                            <h3>Security & Privacy</h3>
+                    <!-- SETTINGS MODULES -->
+                    <div class="settings-modules">
+                        <div class="settings-module">
+                            <div class="module-header">
+                                <i class="fas fa-sliders-h"></i>
+                                <h3>Preferences</h3>
+                            </div>
+                            <div class="settings-list">
+                                <div class="setting-control">
+                                    <div class="setting-label">
+                                        <span>Dark Mode</span>
+                                        <span class="setting-hint">Enabled</span>
+                                    </div>
+                                    <div class="toggle-control active"></div>
+                                </div>
+                                <div class="setting-control">
+                                    <div class="setting-label">
+                                        <span>Animations</span>
+                                        <span class="setting-hint">Smooth</span>
+                                    </div>
+                                    <div class="toggle-control active"></div>
+                                </div>
+                                <div class="setting-control">
+                                    <div class="setting-label">
+                                        <span>Notifications</span>
+                                        <span class="setting-hint">All On</span>
+                                    </div>
+                                    <div class="toggle-control active"></div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="security-items">
-                            <div class="security-item">
-                                <div class="security-info">
-                                    <div class="security-name">Two-Factor Authentication</div>
-                                    <div class="security-status">Enabled</div>
-                                </div>
-                                <span class="badge-secure">ON</span>
-                            </div>
-                            <div class="security-item">
-                                <div class="security-info">
-                                    <div class="security-name">Password</div>
-                                    <div class="security-status">Changed 45 days ago</div>
-                                </div>
-                                <button class="btn-secondary">Change</button>
-                            </div>
-                            <div class="security-item">
-                                <div class="security-info">
-                                    <div class="security-name">Active Sessions</div>
-                                    <div class="security-status">1 session</div>
-                                </div>
-                                <button class="btn-secondary">Manage</button>
-                            </div>
-                        </div>
-                    </div>
 
-                    <div class="settings-panel">
-                        <div class="panel-title">
-                            <i class="fas fa-info-circle"></i>
-                            <h3>System Information</h3>
+                        <div class="settings-module">
+                            <div class="module-header">
+                                <i class="fas fa-lock"></i>
+                                <h3>Security</h3>
+                            </div>
+                            <div class="security-list">
+                                <div class="security-item">
+                                    <div class="security-left">
+                                        <div class="security-title">Two-Factor Auth</div>
+                                        <div class="security-desc">Enabled</div>
+                                    </div>
+                                    <span class="badge-on">ON</span>
+                                </div>
+                                <div class="security-item">
+                                    <div class="security-left">
+                                        <div class="security-title">Password</div>
+                                        <div class="security-desc">Changed 45 days ago</div>
+                                    </div>
+                                    <button class="btn-change">Change</button>
+                                </div>
+                                <div class="security-item">
+                                    <div class="security-left">
+                                        <div class="security-title">Sessions</div>
+                                        <div class="security-desc">1 active</div>
+                                    </div>
+                                    <button class="btn-change">Manage</button>
+                                </div>
+                            </div>
                         </div>
-                        <div class="info-items">
-                            <div class="info-row">
-                                <span>Version</span>
-                                <strong>2.4.1</strong>
+
+                        <div class="settings-module">
+                            <div class="module-header">
+                                <i class="fas fa-info-circle"></i>
+                                <h3>About</h3>
                             </div>
-                            <div class="info-row">
-                                <span>Build</span>
-                                <strong>#8420</strong>
-                            </div>
-                            <div class="info-row">
-                                <span>Last Updated</span>
-                                <strong>April 10, 2026</strong>
-                            </div>
-                            <div class="info-row">
-                                <span>Database</span>
-                                <strong>Synced</strong>
+                            <div class="about-list">
+                                <div class="about-item">
+                                    <span>Version</span>
+                                    <strong>2.4.1</strong>
+                                </div>
+                                <div class="about-item">
+                                    <span>Build</span>
+                                    <strong>#8420</strong>
+                                </div>
+                                <div class="about-item">
+                                    <span>Updated</span>
+                                    <strong>April 10, 2026</strong>
+                                </div>
                             </div>
                         </div>
                     </div>
