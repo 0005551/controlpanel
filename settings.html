@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="components.css">
+    <link rel="stylesheet" href="animations.css">
+</head>
+<body>
+    <div class="backdrop-glow"></div>
+
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <button class="sidebar-toggle" id="sidebarToggle"><i class="fas fa-bars"></i></button>
+            <a href="index.html" class="logo">
+                <div class="logo-icon">◆</div>
+                <div class="logo-text">Control<span>OS</span></div>
+            </a>
+        </div>
+
+        <nav class="sidebar-nav">
+            <ul>
+                <li><a href="index.html" class="nav-link"><i class="fas fa-home"></i><span>Dashboard</span></a></li>
+                <li><a href="actions.html" class="nav-link"><i class="fas fa-bolt"></i><span>Actions</span></a></li>
+                <li><a href="habits.html" class="nav-link"><i class="fas fa-ring"></i><span>Habits</span></a></li>
+                <li><a href="money.html" class="nav-link"><i class="fas fa-chart-line"></i><span>Money</span></a></li>
+                <li><a href="analytics.html" class="nav-link"><i class="fas fa-chart-bar"></i><span>Analytics</span></a></li>
+                <li><a href="planner.html" class="nav-link"><i class="fas fa-calendar"></i><span>Planner</span></a></li>
+                <li><a href="journal.html" class="nav-link"><i class="fas fa-book"></i><span>Journal</span></a></li>
+                <li><a href="focus.html" class="nav-link"><i class="fas fa-eye"></i><span>Focus</span></a></li>
+                <li><a href="profile.html" class="nav-link"><i class="fas fa-user"></i><span>Profile</span></a></li>
+                <li><a href="settings.html" class="nav-link active"><i class="fas fa-cog"></i><span>Settings</span></a></li>
+            </ul>
+        </nav>
+
+        <div class="sidebar-footer">
+            <div class="user-profile">
+                <div class="user-avatar"><i class="fas fa-user"></i></div>
+                <div class="user-info">
+                    <div class="user-name">Control User</div>
+                    <div class="user-status"><span class="status-dot"></span>Online</div>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <div class="main-container">
+        <div class="top-bar">
+            <div class="top-bar-left">
+                <h1 class="page-title">Settings</h1>
+                <p class="page-subtitle">System configuration and preferences</p>
+            </div>
+            <div class="top-bar-right">
+                <div class="clock-widget">
+                    <div class="time" id="liveTime">14:32</div>
+                    <div class="date" id="liveDate">Tuesday, April 14</div>
+                </div>
+                <div class="notifications-bell">
+                    <i class="fas fa-bell"></i>
+                    <span class="badge">3</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-area">
+            <!-- SETTINGS HEADER -->
+            <div class="settings-header-minimal">
+                <h2>System Settings</h2>
+                <div class="system-status-badge">
+                    <span class="check-icon">✓</span>
+                    All Systems Optimal
+                </div>
+            </div>
+
+            <!-- SETTINGS MODULES -->
+            <div class="settings-modules">
+                <div class="settings-module">
+                    <div class="module-header">
+                        <i class="fas fa-sliders-h"></i>
+                        <h3>Preferences</h3>
+                    </div>
+                    <div class="settings-list">
+                        <div class="setting-control">
+                            <div class="setting-label">
+                                <span>Dark Mode</span>
+                                <span class="setting-hint">Enabled</span>
+                            </div>
+                            <div class="toggle-control active"></div>
+                        </div>
+                        <div class="setting-control">
+                            <div class="setting-label">
+                                <span>Animations</span>
+                                <span class="setting-hint">Smooth</span>
+                            </div>
+                            <div class="toggle-control active"></div>
+                        </div>
+                        <div class="setting-control">
+                            <div class="setting-label">
+                                <span>Notifications</span>
+                                <span class="setting-hint">All On</span>
+                            </div>
+                            <div class="toggle-control active"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="settings-module">
+                    <div class="module-header">
+                        <i class="fas fa-lock"></i>
+                        <h3>Security</h3>
+                    </div>
+                    <div class="security-list">
+                        <div class="security-item">
+                            <div class="security-left">
+                                <div class="security-title">Two-Factor Auth</div>
+                                <div class="security-desc">Enabled</div>
+                            </div>
+                            <span class="badge-on">ON</span>
+                        </div>
+                        <div class="security-item">
+                            <div class="security-left">
+                                <div class="security-title">Password</div>
+                                <div class="security-desc">Changed 45 days ago</div>
+                            </div>
+                            <button class="btn-change">Change</button>
+                        </div>
+                        <div class="security-item">
+                            <div class="security-left">
+                                <div class="security-title">Sessions</div>
+                                <div class="security-desc">1 active</div>
+                            </div>
+                            <button class="btn-change">Manage</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="settings-module">
+                    <div class="module-header">
+                        <i class="fas fa-bell"></i>
+                        <h3>Notifications</h3>
+                    </div>
+                    <div class="settings-list">
+                        <div class="setting-control">
+                            <div class="setting-label">
+                                <span>Push Notifications</span>
+                                <span class="setting-hint">Enabled</span>
+                            </div>
+                            <div class="toggle-control active"></div>
+                        </div>
+                        <div class="setting-control">
+                            <div class="setting-label">
+                                <span>Email Digest</span>
+                                <span class="setting-hint">Weekly</span>
+                            </div>
+                            <div class="toggle-control active"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="settings-module">
+                    <div class="module-header">
+                        <i class="fas fa-info-circle"></i>
+                        <h3>About</h3>
+                    </div>
+                    <div class="about-list">
+                        <div class="about-item">
+                            <span>Version</span>
+                            <strong>2.4.1</strong>
+                        </div>
+                        <div class="about-item">
+                            <span>Build</span>
+                            <strong>#8420</strong>
+                        </div>
+                        <div class="about-item">
+                            <span>Updated</span>
+                            <strong>April 10, 2026</strong>
+                        </div>
+                        <div class="about-item">
+                            <span>Database</span>
+                            <strong>Synced</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
