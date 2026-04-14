@@ -87,7 +87,6 @@ function initializeSidebarToggle() {
         });
     }
 
-    // Close sidebar when clicking outside on mobile
     document.addEventListener('click', (e) => {
         if (window.innerWidth <= 768) {
             const isClickInsideSidebar = sidebar.contains(e.target);
@@ -116,8 +115,7 @@ function initializeScrollAnimations() {
         });
     }, observerOptions);
 
-    // Observe all section cards
-    document.querySelectorAll('.section-card').forEach(card => {
+    document.querySelectorAll('.overview-card, .action-task, .habit-card-large, .money-panel, .settings-panel').forEach(card => {
         observer.observe(card);
     });
 }
@@ -139,41 +137,6 @@ function animateCounter(element, target, duration = 1000) {
     }, 16);
 }
 
-// ===== PROGRESS RING ANIMATION =====
-window.addEventListener('load', () => {
-    // Add SVG gradient
-    const svg = document.querySelector('.progress-ring svg');
-    if (svg && !document.querySelector('defs')) {
-        const defs = document.createElementNS('http://www.w3.org/2000/svg', 'defs');
-        const gradient = document.createElementNS('http://www.w3.org/2000/svg', 'linearGradient');
-        gradient.setAttribute('id', 'gradient');
-        gradient.setAttribute('x1', '0%');
-        gradient.setAttribute('y1', '0%');
-        gradient.setAttribute('x2', '100%');
-        gradient.setAttribute('y2', '100%');
-
-        const stop1 = document.createElementNS('http://www.w3.org/2000/svg', 'stop');
-        stop1.setAttribute('offset', '0%');
-        stop1.setAttribute('stop-color', '#d0d0d0');
-
-        const stop2 = document.createElementNS('http://www.w3.org/2000/svg', 'stop');
-        stop2.setAttribute('offset', '100%');
-        stop2.setAttribute('stop-color', '#a0a0a0');
-
-        gradient.appendChild(stop1);
-        gradient.appendChild(stop2);
-        defs.appendChild(gradient);
-        svg.insertBefore(defs, svg.firstChild);
-    }
-
-    // Animate counters on load
-    const counters = document.querySelectorAll('[data-count]');
-    counters.forEach(counter => {
-        const target = parseInt(counter.dataset.count);
-        animateCounter(counter, target);
-    });
-});
-
 // ===== RESPONSIVE HANDLING =====
 window.addEventListener('resize', () => {
     const sidebar = document.getElementById('sidebar');
@@ -188,19 +151,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         if (this.getAttribute('href') !== '#') {
             e.preventDefault();
         }
-    });
-});
-
-// ===== HOVER EFFECTS =====
-document.querySelectorAll('.action-btn, .section-card').forEach(element => {
-    element.addEventListener('mouseenter', function () {
-        if (window.innerWidth > 768) {
-            this.style.willChange = 'transform, box-shadow';
-        }
-    });
-
-    element.addEventListener('mouseleave', function () {
-        this.style.willChange = 'auto';
     });
 });
 
@@ -223,18 +173,6 @@ function initializeTheme() {
 }
 
 initializeTheme();
-
-// ===== PERFORMANCE OPTIMIZATION =====
-let ticking = false;
-document.addEventListener('scroll', () => {
-    if (!ticking) {
-        window.requestAnimationFrame(() => {
-            // Scroll-based animations can be added here
-            ticking = false;
-        });
-        ticking = true;
-    }
-});
 
 // ===== EXPORT FUNCTIONS =====
 window.animateCounter = animateCounter;
