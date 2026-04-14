@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="components.css">
+    <link rel="stylesheet" href="animations.css">
+</head>
+<body>
+    <div class="backdrop-glow"></div>
+
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <button class="sidebar-toggle" id="sidebarToggle"><i class="fas fa-bars"></i></button>
+            <a href="index.html" class="logo">
+                <div class="logo-icon">◆</div>
+                <div class="logo-text">Control<span>OS</span></div>
+            </a>
+        </div>
+
+        <nav class="sidebar-nav">
+            <ul>
+                <li><a href="index.html" class="nav-link"><i class="fas fa-home"></i><span>Dashboard</span></a></li>
+                <li><a href="actions.html" class="nav-link"><i class="fas fa-bolt"></i><span>Actions</span></a></li>
+                <li><a href="habits.html" class="nav-link"><i class="fas fa-ring"></i><span>Habits</span></a></li>
+                <li><a href="money.html" class="nav-link"><i class="fas fa-chart-line"></i><span>Money</span></a></li>
+                <li><a href="analytics.html" class="nav-link"><i class="fas fa-chart-bar"></i><span>Analytics</span></a></li>
+                <li><a href="planner.html" class="nav-link"><i class="fas fa-calendar"></i><span>Planner</span></a></li>
+                <li><a href="journal.html" class="nav-link"><i class="fas fa-book"></i><span>Journal</span></a></li>
+                <li><a href="focus.html" class="nav-link"><i class="fas fa-eye"></i><span>Focus</span></a></li>
+                <li><a href="profile.html" class="nav-link active"><i class="fas fa-user"></i><span>Profile</span></a></li>
+                <li><a href="settings.html" class="nav-link"><i class="fas fa-cog"></i><span>Settings</span></a></li>
+            </ul>
+        </nav>
+
+        <div class="sidebar-footer">
+            <div class="user-profile">
+                <div class="user-avatar"><i class="fas fa-user"></i></div>
+                <div class="user-info">
+                    <div class="user-name">Control User</div>
+                    <div class="user-status"><span class="status-dot"></span>Online</div>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <div class="main-container">
+        <div class="top-bar">
+            <div class="top-bar-left">
+                <h1 class="page-title">Profile</h1>
+                <p class="page-subtitle">User account and achievements</p>
+            </div>
+            <div class="top-bar-right">
+                <div class="clock-widget">
+                    <div class="time" id="liveTime">14:32</div>
+                    <div class="date" id="liveDate">Tuesday, April 14</div>
+                </div>
+                <div class="notifications-bell">
+                    <i class="fas fa-bell"></i>
+                    <span class="badge">3</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-area">
+            <!-- PROFILE HEADER -->
+            <div class="profile-header-section">
+                <div class="profile-avatar-large">
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="profile-info">
+                    <h2>Control User</h2>
+                    <p>Productivity Enthusiast • System Administrator</p>
+                    <div class="profile-meta">
+                        <span>Joined April 2026</span>
+                        <span>847h Uptime</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- STATS OVERVIEW -->
+            <div class="profile-stats">
+                <div class="profile-stat-card">
+                    <div class="stat-count">2,847</div>
+                    <div class="stat-title">Actions Completed</div>
+                </div>
+                <div class="profile-stat-card">
+                    <div class="stat-count">94</div>
+                    <div class="stat-title">Days Active</div>
+                </div>
+                <div class="profile-stat-card">
+                    <div class="stat-count">847</div>
+                    <div class="stat-title">Hours Logged</div>
+                </div>
+                <div class="profile-stat-card">
+                    <div class="stat-count">23</div>
+                    <div class="stat-title">Current Streaks</div>
+                </div>
+            </div>
+
+            <!-- ACHIEVEMENTS -->
+            <div class="achievements-section">
+                <h3>Achievements</h3>
+                <div class="achievements-grid">
+                    <div class="achievement">
+                        <div class="achievement-icon">🏆</div>
+                        <div class="achievement-title">Productivity Master</div>
+                        <div class="achievement-desc">Completed 1000 actions</div>
+                    </div>
+                    <div class="achievement">
+                        <div class="achievement-icon">🔥</div>
+                        <div class="achievement-title">Unstoppable</div>
+                        <div class="achievement-desc">20-day streak maintained</div>
+                    </div>
+                    <div class="achievement">
+                        <div class="achievement-icon">💎</div>
+                        <div class="achievement-title">Premium User</div>
+                        <div class="achievement-desc">6 months active</div>
+                    </div>
+                    <div class="achievement">
+                        <div class="achievement-icon">🎯</div>
+                        <div class="achievement-title">On Target</div>
+                        <div class="achievement-desc">90%+ completion rate</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ACCOUNT DETAILS -->
+            <div class="account-details">
+                <h3>Account Information</h3>
+                <div class="details-grid">
+                    <div class="detail-item">
+                        <span class="detail-label">Email</span>
+                        <span class="detail-value">user@example.com</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Subscription</span>
+                        <span class="detail-value">Premium</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Joined</span>
+                        <span class="detail-value">April 1, 2026</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Last Active</span>
+                        <span class="detail-value">Today at 2:32 PM</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
