@@ -94,6 +94,12 @@ body {
     align-items: center;
     gap: 10px;
     flex: 1;
+    text-decoration: none;
+    transition: all var(--transition-normal);
+}
+
+.logo:hover {
+    opacity: 0.8;
 }
 
 .logo-icon {
@@ -326,35 +332,6 @@ body {
     padding: 40px;
 }
 
-.page-section {
-    display: none;
-    animation: fadeIn var(--transition-smooth);
-}
-
-.page-section.active {
-    display: block;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes pulse {
-    0%, 100% {
-        opacity: 1;
-    }
-    50% {
-        opacity: 0.5;
-    }
-}
-
 /* RESPONSIVE */
 @media (max-width: 1024px) {
     .sidebar {
@@ -437,4 +414,13 @@ body {
 
 ::-webkit-scrollbar-thumb:hover {
     background: var(--border-color);
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
 }
