@@ -19,22 +19,18 @@ function initializeNavigation() {
 
             const sectionName = link.dataset.section;
 
-            // Update active nav link
             navLinks.forEach(l => l.classList.remove('active'));
             link.classList.add('active');
 
-            // Hide all sections
             sections.forEach(section => {
                 section.classList.remove('active');
             });
 
-            // Show selected section
-            const activeSection = document.querySelector(`[data-section="${sectionName}"]`);
+            const activeSection = document.querySelector(`.page-section[data-section="${sectionName}"]`);
             if (activeSection) {
                 activeSection.classList.add('active');
             }
 
-            // Update page title
             const titles = {
                 dashboard: { title: 'Dashboard', subtitle: 'Welcome to your command center' },
                 actions: { title: 'Actions', subtitle: 'Command center for your tasks' },
@@ -48,7 +44,6 @@ function initializeNavigation() {
                 pageSubtitle.textContent = titles[sectionName].subtitle;
             }
 
-            // Close sidebar on mobile
             const sidebar = document.querySelector('.sidebar');
             if (window.innerWidth <= 768) {
                 sidebar.classList.remove('active');
