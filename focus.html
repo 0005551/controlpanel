@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="components.css">
+    <link rel="stylesheet" href="animations.css">
+</head>
+<body>
+    <div class="backdrop-glow"></div>
+
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <button class="sidebar-toggle" id="sidebarToggle"><i class="fas fa-bars"></i></button>
+            <a href="index.html" class="logo">
+                <div class="logo-icon">◆</div>
+                <div class="logo-text">Control<span>OS</span></div>
+            </a>
+        </div>
+
+        <nav class="sidebar-nav">
+            <ul>
+                <li><a href="index.html" class="nav-link"><i class="fas fa-home"></i><span>Dashboard</span></a></li>
+                <li><a href="actions.html" class="nav-link"><i class="fas fa-bolt"></i><span>Actions</span></a></li>
+                <li><a href="habits.html" class="nav-link"><i class="fas fa-ring"></i><span>Habits</span></a></li>
+                <li><a href="money.html" class="nav-link"><i class="fas fa-chart-line"></i><span>Money</span></a></li>
+                <li><a href="analytics.html" class="nav-link"><i class="fas fa-chart-bar"></i><span>Analytics</span></a></li>
+                <li><a href="planner.html" class="nav-link"><i class="fas fa-calendar"></i><span>Planner</span></a></li>
+                <li><a href="journal.html" class="nav-link"><i class="fas fa-book"></i><span>Journal</span></a></li>
+                <li><a href="focus.html" class="nav-link active"><i class="fas fa-eye"></i><span>Focus</span></a></li>
+                <li><a href="profile.html" class="nav-link"><i class="fas fa-user"></i><span>Profile</span></a></li>
+                <li><a href="settings.html" class="nav-link"><i class="fas fa-cog"></i><span>Settings</span></a></li>
+            </ul>
+        </nav>
+
+        <div class="sidebar-footer">
+            <div class="user-profile">
+                <div class="user-avatar"><i class="fas fa-user"></i></div>
+                <div class="user-info">
+                    <div class="user-name">Control User</div>
+                    <div class="user-status"><span class="status-dot"></span>Online</div>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <div class="main-container">
+        <div class="top-bar">
+            <div class="top-bar-left">
+                <h1 class="page-title">Focus Mode</h1>
+                <p class="page-subtitle">Distraction-free deep work</p>
+            </div>
+            <div class="top-bar-right">
+                <div class="clock-widget">
+                    <div class="time" id="liveTime">14:32</div>
+                    <div class="date" id="liveDate">Tuesday, April 14</div>
+                </div>
+                <div class="notifications-bell">
+                    <i class="fas fa-bell"></i>
+                    <span class="badge">3</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-area">
+            <!-- FOCUS HERO -->
+            <div class="focus-hero">
+                <div class="focus-center">
+                    <div class="focus-timer-display">
+                        <div class="timer-value">25:00</div>
+                        <div class="timer-label">Pomodoro Session</div>
+                    </div>
+
+                    <div class="focus-objective">
+                        <div class="objective-label">Current Objective</div>
+                        <div class="objective-title">Deep Work on Project</div>
+                    </div>
+
+                    <div class="focus-controls">
+                        <button class="focus-btn start"><i class="fas fa-play"></i> Start</button>
+                        <button class="focus-btn pause"><i class="fas fa-pause"></i> Pause</button>
+                        <button class="focus-btn reset"><i class="fas fa-redo"></i> Reset</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SESSION STATS -->
+            <div class="session-stats">
+                <div class="stat-card">
+                    <i class="fas fa-fire"></i>
+                    <div class="stat-data">
+                        <span class="stat-label">Sessions Today</span>
+                        <span class="stat-val">3</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-clock"></i>
+                    <div class="stat-data">
+                        <span class="stat-label">Focus Time</span>
+                        <span class="stat-val">2h 15m</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-target"></i>
+                    <div class="stat-data">
+                        <span class="stat-label">Productivity</span>
+                        <span class="stat-val">High</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SESSION HISTORY -->
+            <div class="session-history">
+                <h3>Recent Sessions</h3>
+                <div class="history-list">
+                    <div class="history-item">
+                        <div class="history-time">9:00 AM - 9:25 AM</div>
+                        <div class="history-task">Project Documentation</div>
+                        <div class="history-duration">25 min</div>
+                    </div>
+                    <div class="history-item">
+                        <div class="history-time">10:30 AM - 10:55 AM</div>
+                        <div class="history-task">Code Review</div>
+                        <div class="history-duration">25 min</div>
+                    </div>
+                    <div class="history-item">
+                        <div class="history-time">1:00 PM - 1:25 PM</div>
+                        <div class="history-task">Feature Development</div>
+                        <div class="history-duration">25 min</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
