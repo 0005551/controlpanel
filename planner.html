@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="components.css">
+    <link rel="stylesheet" href="animations.css">
+</head>
+<body>
+    <div class="backdrop-glow"></div>
+
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <button class="sidebar-toggle" id="sidebarToggle"><i class="fas fa-bars"></i></button>
+            <a href="index.html" class="logo">
+                <div class="logo-icon">◆</div>
+                <div class="logo-text">Control<span>OS</span></div>
+            </a>
+        </div>
+
+        <nav class="sidebar-nav">
+            <ul>
+                <li><a href="index.html" class="nav-link"><i class="fas fa-home"></i><span>Dashboard</span></a></li>
+                <li><a href="actions.html" class="nav-link"><i class="fas fa-bolt"></i><span>Actions</span></a></li>
+                <li><a href="habits.html" class="nav-link"><i class="fas fa-ring"></i><span>Habits</span></a></li>
+                <li><a href="money.html" class="nav-link"><i class="fas fa-chart-line"></i><span>Money</span></a></li>
+                <li><a href="analytics.html" class="nav-link"><i class="fas fa-chart-bar"></i><span>Analytics</span></a></li>
+                <li><a href="planner.html" class="nav-link active"><i class="fas fa-calendar"></i><span>Planner</span></a></li>
+                <li><a href="journal.html" class="nav-link"><i class="fas fa-book"></i><span>Journal</span></a></li>
+                <li><a href="focus.html" class="nav-link"><i class="fas fa-eye"></i><span>Focus</span></a></li>
+                <li><a href="profile.html" class="nav-link"><i class="fas fa-user"></i><span>Profile</span></a></li>
+                <li><a href="settings.html" class="nav-link"><i class="fas fa-cog"></i><span>Settings</span></a></li>
+            </ul>
+        </nav>
+
+        <div class="sidebar-footer">
+            <div class="user-profile">
+                <div class="user-avatar"><i class="fas fa-user"></i></div>
+                <div class="user-info">
+                    <div class="user-name">Control User</div>
+                    <div class="user-status"><span class="status-dot"></span>Online</div>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <div class="main-container">
+        <div class="top-bar">
+            <div class="top-bar-left">
+                <h1 class="page-title">Planner</h1>
+                <p class="page-subtitle">Schedule and plan your week</p>
+            </div>
+            <div class="top-bar-right">
+                <div class="clock-widget">
+                    <div class="time" id="liveTime">14:32</div>
+                    <div class="date" id="liveDate">Tuesday, April 14</div>
+                </div>
+                <div class="notifications-bell">
+                    <i class="fas fa-bell"></i>
+                    <span class="badge">3</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-area">
+            <!-- PLANNER HEADER -->
+            <div class="planner-header">
+                <h2>Weekly Schedule</h2>
+                <div class="week-nav">
+                    <button class="week-btn"><i class="fas fa-chevron-left"></i></button>
+                    <span>Apr 14 - Apr 20</span>
+                    <button class="week-btn"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+
+            <!-- SCHEDULE GRID -->
+            <div class="schedule-grid">
+                <div class="schedule-day">
+                    <div class="day-header today">
+                        <span class="day-name">Tuesday</span>
+                        <span class="day-date">14</span>
+                    </div>
+                    <div class="day-events">
+                        <div class="event-block">
+                            <div class="event-time">9:00 AM</div>
+                            <div class="event-title">Team Standup</div>
+                            <div class="event-duration">30 min</div>
+                        </div>
+                        <div class="event-block">
+                            <div class="event-time">2:00 PM</div>
+                            <div class="event-title">Project Review</div>
+                            <div class="event-duration">1 hour</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="schedule-day">
+                    <div class="day-header">
+                        <span class="day-name">Wednesday</span>
+                        <span class="day-date">15</span>
+                    </div>
+                    <div class="day-events">
+                        <div class="event-block">
+                            <div class="event-time">10:00 AM</div>
+                            <div class="event-title">Client Call</div>
+                            <div class="event-duration">1 hour</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="schedule-day">
+                    <div class="day-header">
+                        <span class="day-name">Thursday</span>
+                        <span class="day-date">16</span>
+                    </div>
+                    <div class="day-events">
+                        <div class="event-block">
+                            <div class="event-time">3:00 PM</div>
+                            <div class="event-title">Budget Meeting</div>
+                            <div class="event-duration">45 min</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="schedule-day">
+                    <div class="day-header">
+                        <span class="day-name">Friday</span>
+                        <span class="day-date">17</span>
+                    </div>
+                    <div class="day-events">
+                        <div class="event-block">
+                            <div class="event-time">1:00 PM</div>
+                            <div class="event-title">Week Retrospective</div>
+                            <div class="event-duration">1 hour</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="schedule-day">
+                    <div class="day-header">
+                        <span class="day-name">Saturday</span>
+                        <span class="day-date">18</span>
+                    </div>
+                    <div class="day-events">
+                        <div class="event-empty">No events</div>
+                    </div>
+                </div>
+
+                <div class="schedule-day">
+                    <div class="day-header">
+                        <span class="day-name">Sunday</span>
+                        <span class="day-date">19</span>
+                    </div>
+                    <div class="day-events">
+                        <div class="event-empty">No events</div>
+                    </div>
+                </div>
+
+                <div class="schedule-day">
+                    <div class="day-header">
+                        <span class="day-name">Monday</span>
+                        <span class="day-date">20</span>
+                    </div>
+                    <div class="day-events">
+                        <div class="event-block">
+                            <div class="event-time">9:00 AM</div>
+                            <div class="event-title">Sprint Planning</div>
+                            <div class="event-duration">2 hours</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- UPCOMING SECTION -->
+            <div class="upcoming-section">
+                <h3>Upcoming Deadlines</h3>
+                <div class="deadlines-list">
+                    <div class="deadline-item">
+                        <div class="deadline-date">
+                            <div class="date-day">18</div>
+                            <div class="date-month">Apr</div>
+                        </div>
+                        <div class="deadline-info">
+                            <div class="deadline-title">Project Submission</div>
+                            <div class="deadline-meta">High Priority</div>
+                        </div>
+                    </div>
+                    <div class="deadline-item">
+                        <div class="deadline-date">
+                            <div class="date-day">25</div>
+                            <div class="date-month">Apr</div>
+                        </div>
+                        <div class="deadline-info">
+                            <div class="deadline-title">Report Due</div>
+                            <div class="deadline-meta">Medium Priority</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
