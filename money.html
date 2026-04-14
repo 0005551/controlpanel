@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="components.css">
+    <link rel="stylesheet" href="animations.css">
+</head>
+<body>
+    <div class="backdrop-glow"></div>
+
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <button class="sidebar-toggle" id="sidebarToggle"><i class="fas fa-bars"></i></button>
+            <a href="index.html" class="logo">
+                <div class="logo-icon">◆</div>
+                <div class="logo-text">Control<span>OS</span></div>
+            </a>
+        </div>
+
+        <nav class="sidebar-nav">
+            <ul>
+                <li><a href="index.html" class="nav-link"><i class="fas fa-home"></i><span>Dashboard</span></a></li>
+                <li><a href="actions.html" class="nav-link"><i class="fas fa-bolt"></i><span>Actions</span></a></li>
+                <li><a href="habits.html" class="nav-link"><i class="fas fa-ring"></i><span>Habits</span></a></li>
+                <li><a href="money.html" class="nav-link active"><i class="fas fa-chart-line"></i><span>Money</span></a></li>
+                <li><a href="analytics.html" class="nav-link"><i class="fas fa-chart-bar"></i><span>Analytics</span></a></li>
+                <li><a href="planner.html" class="nav-link"><i class="fas fa-calendar"></i><span>Planner</span></a></li>
+                <li><a href="journal.html" class="nav-link"><i class="fas fa-book"></i><span>Journal</span></a></li>
+                <li><a href="focus.html" class="nav-link"><i class="fas fa-eye"></i><span>Focus</span></a></li>
+                <li><a href="profile.html" class="nav-link"><i class="fas fa-user"></i><span>Profile</span></a></li>
+                <li><a href="settings.html" class="nav-link"><i class="fas fa-cog"></i><span>Settings</span></a></li>
+            </ul>
+        </nav>
+
+        <div class="sidebar-footer">
+            <div class="user-profile">
+                <div class="user-avatar"><i class="fas fa-user"></i></div>
+                <div class="user-info">
+                    <div class="user-name">Control User</div>
+                    <div class="user-status"><span class="status-dot"></span>Online</div>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <div class="main-container">
+        <div class="top-bar">
+            <div class="top-bar-left">
+                <h1 class="page-title">Money</h1>
+                <p class="page-subtitle">Financial overview and management</p>
+            </div>
+            <div class="top-bar-right">
+                <div class="clock-widget">
+                    <div class="time" id="liveTime">14:32</div>
+                    <div class="date" id="liveDate">Tuesday, April 14</div>
+                </div>
+                <div class="notifications-bell">
+                    <i class="fas fa-bell"></i>
+                    <span class="badge">3</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-area">
+            <!-- FINANCE COCKPIT -->
+            <div class="finance-cockpit-display">
+                <div class="balance-main">
+                    <div class="balance-label">Total Balance</div>
+                    <div class="balance-amount">$5,240.00</div>
+                </div>
+                <div class="cockpit-flow">
+                    <div class="flow-item income">
+                        <span class="flow-label">Income</span>
+                        <span class="flow-amount">+$3,500</span>
+                    </div>
+                    <div class="flow-divider"></div>
+                    <div class="flow-item spending">
+                        <span class="flow-label">Spending</span>
+                        <span class="flow-amount">-$1,820</span>
+                    </div>
+                    <div class="flow-divider"></div>
+                    <div class="flow-item net">
+                        <span class="flow-label">Net</span>
+                        <span class="flow-amount">+$1,680</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- MONEY PANELS -->
+            <div class="money-panels-layout">
+                <div class="money-panel-accounts">
+                    <div class="panel-label">
+                        <i class="fas fa-wallet"></i>
+                        <h3>Accounts</h3>
+                    </div>
+                    <div class="accounts-stack">
+                        <div class="account-entry">
+                            <div class="account-left">
+                                <span class="account-icon-mini"><i class="fas fa-piggy-bank"></i></span>
+                                <div class="account-info">
+                                    <div class="account-name">Savings</div>
+                                    <div class="account-amt">$4,890</div>
+                                </div>
+                            </div>
+                            <span class="account-change">+2.4%</span>
+                        </div>
+                        <div class="account-entry">
+                            <div class="account-left">
+                                <span class="account-icon-mini"><i class="fas fa-credit-card"></i></span>
+                                <div class="account-info">
+                                    <div class="account-name">Checking</div>
+                                    <div class="account-amt">$350</div>
+                                </div>
+                            </div>
+                            <span class="account-change">+1.2%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="money-panel-budget">
+                    <div class="panel-label">
+                        <i class="fas fa-chart-pie"></i>
+                        <h3>Budget</h3>
+                    </div>
+                    <div class="budget-stack">
+                        <div class="budget-entry">
+                            <div class="budget-row-top">
+                                <span class="budget-name">Food & Dining</span>
+                                <span class="budget-amt">$420 / $500</span>
+                            </div>
+                            <div class="budget-progress"><div class="budget-bar" style="width: 84%"></div></div>
+                        </div>
+                        <div class="budget-entry">
+                            <div class="budget-row-top">
+                                <span class="budget-name">Entertainment</span>
+                                <span class="budget-amt">$240 / $300</span>
+                            </div>
+                            <div class="budget-progress"><div class="budget-bar" style="width: 80%"></div></div>
+                        </div>
+                        <div class="budget-entry">
+                            <div class="budget-row-top">
+                                <span class="budget-name">Transportation</span>
+                                <span class="budget-amt">$180 / $200</span>
+                            </div>
+                            <div class="budget-progress"><div class="budget-bar" style="width: 90%"></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
