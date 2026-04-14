@@ -1,0 +1,190 @@
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+@keyframes glow {
+    0%, 100% {
+        box-shadow: 0 0 20px rgba(208, 208, 208, 0.1);
+    }
+    50% {
+        box-shadow: 0 0 40px rgba(208, 208, 208, 0.2);
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-4px);
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -1000px 0;
+    }
+    100% {
+        background-position: 1000px 0;
+    }
+}
+
+.animate-fadeIn {
+    animation: fadeIn 0.6s ease forwards;
+}
+
+.animate-slideIn {
+    animation: slideIn 0.5s ease forwards;
+}
+
+.animate-pulse {
+    animation: pulse 2s ease-in-out infinite;
+}
+
+.animate-glow {
+    animation: glow 3s ease-in-out infinite;
+}
+
+.animate-float {
+    animation: float 3s ease-in-out infinite;
+}
+
+/* STAGGER ANIMATIONS */
+.section-card:nth-child(1) {
+    animation: fadeIn 0.6s ease forwards;
+    animation-delay: 0.1s;
+}
+
+.section-card:nth-child(2) {
+    animation: fadeIn 0.6s ease forwards;
+    animation-delay: 0.2s;
+}
+
+.section-card:nth-child(3) {
+    animation: fadeIn 0.6s ease forwards;
+    animation-delay: 0.3s;
+}
+
+.section-card:nth-child(4) {
+    animation: fadeIn 0.6s ease forwards;
+    animation-delay: 0.4s;
+}
+
+.section-card:nth-child(5) {
+    animation: fadeIn 0.6s ease forwards;
+    animation-delay: 0.5s;
+}
+
+.section-card:nth-child(6) {
+    animation: fadeIn 0.6s ease forwards;
+    animation-delay: 0.6s;
+}
+
+/* PAGE SECTION TRANSITIONS */
+.page-section {
+    opacity: 0;
+}
+
+.page-section.active {
+    opacity: 1;
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* HOVER GLOW */
+.section-card {
+    position: relative;
+}
+
+.section-card::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(208, 208, 208, 0.1) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.section-card:hover::after {
+    opacity: 1;
+}
+
+/* BUTTON PRESS */
+button {
+    position: relative;
+    overflow: hidden;
+}
+
+button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+button:active::before {
+    width: 300px;
+    height: 300px;
+}
+
+/* LOADING STATE */
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.loading {
+    animation: spin 1s linear infinite;
+}
+
+/* TEXT SELECTION */
+::selection {
+    background: var(--accent-silver);
+    color: var(--bg-dark);
+}
+
+::-moz-selection {
+    background: var(--accent-silver);
+    color: var(--bg-dark);
+}
