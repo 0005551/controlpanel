@@ -3,90 +3,765 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <title>Control Panel Dashboard</title>
     <style>
-        body {
-            background-color: #2c2c2e;
-            color: #FFF;
-            font-family: Arial, sans-serif;
+        * {
             margin: 0;
-            padding: 20px;
+            padding: 0;
+            box-sizing: border-box;
         }
-        h1 {
-            text-align: center;
-            margin-bottom: 20px;
-            font-size: 2.5em;
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
+            color: #e8e8e8;
+            min-height: 100vh;
+            display: flex;
         }
-        .dashboard {
+
+        /* SIDEBAR */
+        .sidebar {
+            width: 280px;
+            background: linear-gradient(180deg, #1a1a1a 0%, #0f0f0f 100%);
+            border-right: 1px solid #333333;
+            padding: 40px 0;
+            position: fixed;
+            height: 100vh;
+            overflow-y: auto;
+            box-shadow: 2px 0 15px rgba(0, 0, 0, 0.5);
+        }
+
+        .sidebar-header {
+            padding: 0 30px 50px 30px;
+            border-bottom: 1px solid #333333;
+            margin-bottom: 30px;
+        }
+
+        .sidebar-header h1 {
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: #ffffff;
+            text-transform: uppercase;
+            background: linear-gradient(135deg, #ffffff 0%, #b0b0b0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .sidebar-header p {
+            font-size: 12px;
+            color: #888888;
+            margin-top: 8px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .sidebar-nav {
+            list-style: none;
+        }
+
+        .sidebar-nav li {
+            margin: 0;
+            padding: 0;
+        }
+
+        .sidebar-nav a {
+            display: flex;
+            align-items: center;
+            padding: 18px 30px;
+            color: #b0b0b0;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            position: relative;
+            font-size: 15px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+
+        .sidebar-nav a i {
+            width: 24px;
+            font-size: 16px;
+            margin-right: 18px;
+            transition: all 0.3s ease;
+        }
+
+        .sidebar-nav a:hover {
+            color: #ffffff;
+            background: rgba(255, 255, 255, 0.05);
+            padding-left: 40px;
+            border-left: 3px solid #b0b0b0;
+        }
+
+        .sidebar-nav a.active {
+            color: #ffffff;
+            background: rgba(255, 255, 255, 0.1);
+            border-left: 3px solid #ffffff;
+            padding-left: 40px;
+        }
+
+        /* MAIN CONTENT */
+        .main-content {
+            margin-left: 280px;
+            flex: 1;
+            padding: 60px 50px;
+            overflow-y: auto;
+            background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
+        }
+
+        .content-header {
+            margin-bottom: 50px;
+        }
+
+        .content-header h2 {
+            font-size: 42px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            color: #ffffff;
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, #ffffff 0%, #b0b0b0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .content-header p {
+            font-size: 15px;
+            color: #888888;
+            letter-spacing: 0.5px;
+        }
+
+        /* SECTIONS */
+        .section {
+            margin-bottom: 60px;
+        }
+
+        .section-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #333333;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .section-title i {
+            font-size: 22px;
+            color: #888888;
+        }
+
+        /* CARDS GRID */
+        .cards-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .card {
+            background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%);
+            border: 1px solid #333333;
+            border-radius: 12px;
+            padding: 35px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.05), transparent);
+            transition: left 0.5s ease;
+            pointer-events: none;
+        }
+
+        .card:hover::before {
+            left: 100%;
+        }
+
+        .card:hover {
+            border-color: #555555;
+            background: linear-gradient(135deg, #252525 0%, #1a1a1a 100%);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(255, 255, 255, 0.08);
+        }
+
+        .card-icon {
+            font-size: 48px;
+            color: #666666;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .card:hover .card-icon {
+            color: #b0b0b0;
+            transform: scale(1.1);
+        }
+
+        .card-title {
+            font-size: 22px;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 12px;
+            letter-spacing: 0.5px;
+        }
+
+        .card-description {
+            font-size: 14px;
+            color: #888888;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        .card-stat {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            border-top: 1px solid #333333;
+        }
+
+        .card-stat:first-child {
+            border-top: none;
+            padding-top: 0;
+        }
+
+        .stat-label {
+            font-size: 13px;
+            color: #888888;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .stat-value {
+            font-size: 20px;
+            font-weight: 700;
+            color: #ffffff;
+        }
+
+        /* ACTION BUTTONS */
+        .card-action {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid #444444;
+            border-radius: 8px;
+            color: #b0b0b0;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
             margin-top: 20px;
         }
-        .card {
-            background: #3a3a3c;
-            border-radius: 10px;
-            padding: 20px;
-            transition: transform 0.2s;
+
+        .card-action:hover {
+            background: rgba(255, 255, 255, 0.15);
+            color: #ffffff;
+            border-color: #666666;
+            transform: translateX(4px);
         }
-        .card:hover {
-            transform: scale(1.05);
+
+        /* TABLE SECTION */
+        .table-section {
+            background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%);
+            border: 1px solid #333333;
+            border-radius: 12px;
+            padding: 35px;
+            overflow-x: auto;
         }
-        .icon {
-            font-size: 2em;
-            margin-bottom: 10px;
+
+        .table-section table {
+            width: 100%;
+            border-collapse: collapse;
         }
-        .card h2 {
-            font-size: 1.5em;
-            margin: 10px 0;
+
+        .table-section th {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 18px 20px;
+            text-align: left;
+            font-size: 13px;
+            font-weight: 600;
+            color: #888888;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 1px solid #333333;
         }
-        .card p {
-            margin: 5px 0;
+
+        .table-section td {
+            padding: 18px 20px;
+            border-bottom: 1px solid #333333;
+            font-size: 14px;
+            color: #b0b0b0;
         }
-        @media (max-width: 600px) {
+
+        .table-section tbody tr:hover {
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .status-active {
+            background: rgba(76, 175, 80, 0.15);
+            color: #4caf50;
+            border: 1px solid rgba(76, 175, 80, 0.3);
+        }
+
+        .status-pending {
+            background: rgba(255, 193, 7, 0.15);
+            color: #ffc107;
+            border: 1px solid rgba(255, 193, 7, 0.3);
+        }
+
+        .status-inactive {
+            background: rgba(244, 67, 54, 0.15);
+            color: #f44336;
+            border: 1px solid rgba(244, 67, 54, 0.3);
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 1200px) {
+            .cards-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
             body {
-                padding: 10px;
+                flex-direction: column;
             }
-            h1 {
-                font-size: 2em;
+
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+                padding: 20px 0;
             }
+
+            .sidebar-header {
+                padding: 0 20px 25px 20px;
+                margin-bottom: 15px;
+            }
+
+            .sidebar-nav a {
+                padding: 14px 20px;
+            }
+
+            .sidebar-nav a:hover,
+            .sidebar-nav a.active {
+                padding-left: 30px;
+            }
+
+            .main-content {
+                margin-left: 0;
+                padding: 40px 25px;
+            }
+
+            .content-header h2 {
+                font-size: 32px;
+            }
+
+            .cards-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .card {
+                padding: 25px;
+            }
+
+            .table-section {
+                padding: 20px;
+                font-size: 12px;
+            }
+
+            .table-section th,
+            .table-section td {
+                padding: 12px 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .main-content {
+                padding: 30px 15px;
+            }
+
+            .content-header h2 {
+                font-size: 24px;
+            }
+
+            .cards-grid {
+                gap: 15px;
+            }
+
+            .card {
+                padding: 20px;
+            }
+
+            .card-title {
+                font-size: 18px;
+            }
+
+            .section-title {
+                font-size: 16px;
+            }
+        }
+
+        /* SCROLLBAR STYLING */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #444444;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #666666;
         }
     </style>
 </head>
 <body>
-    <h1>Control Panel Dashboard</h1>
-    <div class="dashboard">
-        <div class="card">
-            <div class="icon"><i class="fas fa-tachometer-alt"></i></div>
-            <h2>Overview</h2>
-            <p>Quick insights into your application.</p>
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <h1>Control</h1>
+            <p>Dashboard</p>
         </div>
-        <div class="card">
-            <div class="icon"><i class="fas fa-chart-line"></i></div>
-            <h2>Analytics</h2>
-            <p>Detailed analytics about usage.</p>
+        <nav>
+            <ul class="sidebar-nav">
+                <li><a href="#dashboard" class="nav-link active" data-section="dashboard"><i class="fas fa-th-large"></i> Dashboard</a></li>
+                <li><a href="#actions" class="nav-link" data-section="actions"><i class="fas fa-bolt"></i> Actions</a></li>
+                <li><a href="#habits" class="nav-link" data-section="habits"><i class="fas fa-circle-notch"></i> Habits</a></li>
+                <li><a href="#money" class="nav-link" data-section="money"><i class="fas fa-coins"></i> Money</a></li>
+                <li><a href="#settings" class="nav-link" data-section="settings"><i class="fas fa-sliders-h"></i> Settings</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+        <!-- HEADER -->
+        <div class="content-header">
+            <h2>Dashboard</h2>
+            <p>Welcome back. Here's what's happening with your control panel today.</p>
         </div>
-        <div class="card">
-            <div class="icon"><i class="fas fa-cog"></i></div>
-            <h2>Settings</h2>
-            <p>Manage your application settings.</p>
-        </div>
-        <div class="card">
-            <div class="icon"><i class="fas fa-users"></i></div>
-            <h2>Users</h2>
-            <p>Manage user accounts and permissions.</p>
-        </div>
-        <div class="card">
-            <div class="icon"><i class="fas fa-key"></i></div>
-            <h2>Security</h2>
-            <p>Review security settings and logs.</p>
-        </div>
-        <div class="card">
-            <div class="icon"><i class="fas fa-bell"></i></div>
-            <h2>Notifications</h2>
-            <p>Keep track of your notifications.</p>
-        </div>
-    </div>
+
+        <!-- OVERVIEW SECTION -->
+        <section class="section" data-section-content="dashboard">
+            <div class="section-title">
+                <i class="fas fa-chart-line"></i>
+                Overview
+            </div>
+            <div class="cards-grid">
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-activity"></i></div>
+                    <div class="card-title">Active Tasks</div>
+                    <div class="card-description">Monitor your ongoing tasks and priorities</div>
+                    <div class="card-stat">
+                        <span class="stat-label">Current</span>
+                        <span class="stat-value">12</span>
+                    </div>
+                    <div class="card-stat">
+                        <span class="stat-label">Completed</span>
+                        <span class="stat-value">8</span>
+                    </div>
+                    <button class="card-action"><i class="fas fa-arrow-right"></i> View All</button>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-calendar-check"></i></div>
+                    <div class="card-title">This Week</div>
+                    <div class="card-description">Track your performance metrics</div>
+                    <div class="card-stat">
+                        <span class="stat-label">Tasks Done</span>
+                        <span class="stat-value">24</span>
+                    </div>
+                    <div class="card-stat">
+                        <span class="stat-label">On Track</span>
+                        <span class="stat-value">92%</span>
+                    </div>
+                    <button class="card-action"><i class="fas fa-arrow-right"></i> Details</button>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-clock"></i></div>
+                    <div class="card-title">Time Spent</div>
+                    <div class="card-description">See your productivity breakdown</div>
+                    <div class="card-stat">
+                        <span class="stat-label">Today</span>
+                        <span class="stat-value">6h 42m</span>
+                    </div>
+                    <div class="card-stat">
+                        <span class="stat-label">This Week</span>
+                        <span class="stat-value">38h 15m</span>
+                    </div>
+                    <button class="card-action"><i class="fas fa-arrow-right"></i> Analytics</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ACTIONS SECTION -->
+        <section class="section" data-section-content="actions" style="display: none;">
+            <div class="section-title">
+                <i class="fas fa-bolt"></i>
+                Actions
+            </div>
+            <div class="cards-grid">
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-play-circle"></i></div>
+                    <div class="card-title">Start New Action</div>
+                    <div class="card-description">Begin a new task or project today</div>
+                    <div class="card-stat">
+                        <span class="stat-label">Quick Start</span>
+                        <span class="stat-value">5 min</span>
+                    </div>
+                    <button class="card-action"><i class="fas fa-plus"></i> Create</button>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-list-check"></i></div>
+                    <div class="card-title">Action Queue</div>
+                    <div class="card-description">Your upcoming actions and deadlines</div>
+                    <div class="card-stat">
+                        <span class="stat-label">Pending</span>
+                        <span class="stat-value">7</span>
+                    </div>
+                    <button class="card-action"><i class="fas fa-arrow-right"></i> Review</button>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-fire"></i></div>
+                    <div class="card-title">Streak</div>
+                    <div class="card-description">Keep your momentum going strong</div>
+                    <div class="card-stat">
+                        <span class="stat-label">Days Active</span>
+                        <span class="stat-value">15</span>
+                    </div>
+                    <button class="card-action"><i class="fas fa-arrow-right"></i> Maintain</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- HABITS SECTION -->
+        <section class="section" data-section-content="habits" style="display: none;">
+            <div class="section-title">
+                <i class="fas fa-circle-notch"></i>
+                Habits
+            </div>
+            <div class="cards-grid">
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-dumbbell"></i></div>
+                    <div class="card-title">Exercise</div>
+                    <div class="card-description">Daily workout routine and progress</div>
+                    <div class="card-stat">
+                        <span class="stat-label">This Week</span>
+                        <span class="stat-value">5/7</span>
+                    </div>
+                    <div class="card-stat">
+                        <span class="stat-label">Streak</span>
+                        <span class="stat-value">12 days</span>
+                    </div>
+                    <button class="card-action"><i class="fas fa-check"></i> Log Today</button>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-book"></i></div>
+                    <div class="card-title">Reading</div>
+                    <div class="card-description">Track your reading sessions</div>
+                    <div class="card-stat">
+                        <span class="stat-label">This Month</span>
+                        <span class="stat-value">8 books</span>
+                    </div>
+                    <div class="card-stat">
+                        <span class="stat-label">Pages Read</span>
+                        <span class="stat-value">1,240</span>
+                    </div>
+                    <button class="card-action"><i class="fas fa-check"></i> Log Today</button>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-moon"></i></div>
+                    <div class="card-title">Sleep</div>
+                    <div class="card-description">Monitor your sleep schedule</div>
+                    <div class="card-stat">
+                        <span class="stat-label">Avg Sleep</span>
+                        <span class="stat-value">7h 30m</span>
+                    </div>
+                    <div class="card-stat">
+                        <span class="stat-label">This Week</span>
+                        <span class="stat-value">6/7</span>
+                    </div>
+                    <button class="card-action"><i class="fas fa-check"></i> Log Today</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- MONEY SECTION -->
+        <section class="section" data-section-content="money" style="display: none;">
+            <div class="section-title">
+                <i class="fas fa-coins"></i>
+                Money
+            </div>
+            <div class="cards-grid">
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-wallet"></i></div>
+                    <div class="card-title">Balance</div>
+                    <div class="card-description">Your current account balance</div>
+                    <div class="card-stat">
+                        <span class="stat-label">Total</span>
+                        <span class="stat-value">$5,240</span>
+                    </div>
+                    <div class="card-stat">
+                        <span class="stat-label">Available</span>
+                        <span class="stat-value">$4,890</span>
+                    </div>
+                    <button class="card-action"><i class="fas fa-arrow-right"></i> Manage</button>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-arrow-down"></i></div>
+                    <div class="card-title">Spending</div>
+                    <div class="card-description">Your expenses this month</div>
+                    <div class="card-stat">
+                        <span class="stat-label">This Month</span>
+                        <span class="stat-value">$1,820</span>
+                    </div>
+                    <div class="card-stat">
+                        <span class="stat-label">Budget</span>
+                        <span class="stat-value">$2,000</span>
+                    </div>
+                    <button class="card-action"><i class="fas fa-chart-pie"></i> Breakdown</button>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-arrow-up"></i></div>
+                    <div class="card-title">Income</div>
+                    <div class="card-description">Track your earnings and revenue</div>
+                    <div class="card-stat">
+                        <span class="stat-label">This Month</span>
+                        <span class="stat-value">$3,500</span>
+                    </div>
+                    <div class="card-stat">
+                        <span class="stat-label">YTD Total</span>
+                        <span class="stat-value">$28,400</span>
+                    </div>
+                    <button class="card-action"><i class="fas fa-arrow-right"></i> View</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- SETTINGS SECTION -->
+        <section class="section" data-section-content="settings" style="display: none;">
+            <div class="section-title">
+                <i class="fas fa-sliders-h"></i>
+                Settings
+            </div>
+            <div class="cards-grid">
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-user"></i></div>
+                    <div class="card-title">Profile</div>
+                    <div class="card-description">Manage your account information</div>
+                    <div class="card-stat">
+                        <span class="stat-label">Status</span>
+                        <span class="stat-value">Active</span>
+                    </div>
+                    <button class="card-action"><i class="fas fa-edit"></i> Edit</button>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-lock"></i></div>
+                    <div class="card-title">Security</div>
+                    <div class="card-description">Secure your account with authentication</div>
+                    <div class="card-stat">
+                        <span class="stat-label">2FA</span>
+                        <span class="stat-value">Enabled</span>
+                    </div>
+                    <button class="card-action"><i class="fas fa-arrow-right"></i> Update</button>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-bell"></i></div>
+                    <div class="card-title">Notifications</div>
+                    <div class="card-description">Control your notification preferences</div>
+                    <div class="card-stat">
+                        <span class="stat-label">Status</span>
+                        <span class="stat-value">On</span>
+                    </div>
+                    <button class="card-action"><i class="fas fa-arrow-right"></i> Configure</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Navigation switching
+        const navLinks = document.querySelectorAll('.nav-link');
+        const sections = document.querySelectorAll('[data-section-content]');
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                
+                // Remove active class from all links
+                navLinks.forEach(l => l.classList.remove('active'));
+                
+                // Add active class to clicked link
+                link.classList.add('active');
+                
+                // Get the section to show
+                const sectionName = link.dataset.section;
+                
+                // Hide all sections
+                sections.forEach(section => {
+                    section.style.display = 'none';
+                });
+                
+                // Show the selected section
+                const activeSection = document.querySelector(`[data-section-content="${sectionName}"]`);
+                if (activeSection) {
+                    activeSection.style.display = 'block';
+                }
+                
+                // Update header title
+                const headerTitle = document.querySelector('.content-header h2');
+                headerTitle.textContent = link.textContent.trim();
+            });
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+            });
+        });
+    </script>
 </body>
 </html>
