@@ -1,12 +1,9 @@
-// ===== INITIALIZATION =====
 document.addEventListener('DOMContentLoaded', () => {
     initializeNavigation();
     initializeClock();
     initializeSidebarToggle();
-    initializeScrollAnimations();
 });
 
-// ===== NAVIGATION =====
 function initializeNavigation() {
     const navLinks = document.querySelectorAll('.nav-link');
     const sections = document.querySelectorAll('.page-section');
@@ -52,7 +49,6 @@ function initializeNavigation() {
     });
 }
 
-// ===== LIVE CLOCK =====
 function initializeClock() {
     function updateClock() {
         const now = new Date();
@@ -76,7 +72,6 @@ function initializeClock() {
     setInterval(updateClock, 1000);
 }
 
-// ===== SIDEBAR TOGGLE =====
 function initializeSidebarToggle() {
     const toggleBtn = document.getElementById('sidebarToggle');
     const sidebar = document.getElementById('sidebar');
@@ -99,45 +94,6 @@ function initializeSidebarToggle() {
     });
 }
 
-// ===== SCROLL ANIMATIONS =====
-function initializeScrollAnimations() {
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('animate-fadeIn');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, observerOptions);
-
-    document.querySelectorAll('.overview-card, .action-task, .habit-card-large, .money-panel, .settings-panel').forEach(card => {
-        observer.observe(card);
-    });
-}
-
-// ===== ANIMATED COUNTERS =====
-function animateCounter(element, target, duration = 1000) {
-    const start = 0;
-    const increment = target / (duration / 16);
-    let current = start;
-
-    const timer = setInterval(() => {
-        current += increment;
-        if (current >= target) {
-            element.textContent = target;
-            clearInterval(timer);
-        } else {
-            element.textContent = Math.floor(current);
-        }
-    }, 16);
-}
-
-// ===== RESPONSIVE HANDLING =====
 window.addEventListener('resize', () => {
     const sidebar = document.getElementById('sidebar');
     if (window.innerWidth > 768) {
@@ -145,16 +101,6 @@ window.addEventListener('resize', () => {
     }
 });
 
-// ===== SMOOTH SCROLL BEHAVIOR =====
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        if (this.getAttribute('href') !== '#') {
-            e.preventDefault();
-        }
-    });
-});
-
-// ===== KEYBOARD NAVIGATION =====
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
         const sidebar = document.getElementById('sidebar');
@@ -163,16 +109,3 @@ document.addEventListener('keydown', (e) => {
         }
     }
 });
-
-// ===== THEME PREFERENCES =====
-function initializeTheme() {
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    if (prefersDark) {
-        document.body.classList.add('dark-theme');
-    }
-}
-
-initializeTheme();
-
-// ===== EXPORT FUNCTIONS =====
-window.animateCounter = animateCounter;
