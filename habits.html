@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="components.css">
+    <link rel="stylesheet" href="animations.css">
+</head>
+<body>
+    <div class="backdrop-glow"></div>
+
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <button class="sidebar-toggle" id="sidebarToggle"><i class="fas fa-bars"></i></button>
+            <a href="index.html" class="logo">
+                <div class="logo-icon">◆</div>
+                <div class="logo-text">Control<span>OS</span></div>
+            </a>
+        </div>
+
+        <nav class="sidebar-nav">
+            <ul>
+                <li><a href="index.html" class="nav-link"><i class="fas fa-home"></i><span>Dashboard</span></a></li>
+                <li><a href="actions.html" class="nav-link"><i class="fas fa-bolt"></i><span>Actions</span></a></li>
+                <li><a href="habits.html" class="nav-link active"><i class="fas fa-ring"></i><span>Habits</span></a></li>
+                <li><a href="money.html" class="nav-link"><i class="fas fa-chart-line"></i><span>Money</span></a></li>
+                <li><a href="analytics.html" class="nav-link"><i class="fas fa-chart-bar"></i><span>Analytics</span></a></li>
+                <li><a href="planner.html" class="nav-link"><i class="fas fa-calendar"></i><span>Planner</span></a></li>
+                <li><a href="journal.html" class="nav-link"><i class="fas fa-book"></i><span>Journal</span></a></li>
+                <li><a href="focus.html" class="nav-link"><i class="fas fa-eye"></i><span>Focus</span></a></li>
+                <li><a href="profile.html" class="nav-link"><i class="fas fa-user"></i><span>Profile</span></a></li>
+                <li><a href="settings.html" class="nav-link"><i class="fas fa-cog"></i><span>Settings</span></a></li>
+            </ul>
+        </nav>
+
+        <div class="sidebar-footer">
+            <div class="user-profile">
+                <div class="user-avatar"><i class="fas fa-user"></i></div>
+                <div class="user-info">
+                    <div class="user-name">Control User</div>
+                    <div class="user-status"><span class="status-dot"></span>Online</div>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <div class="main-container">
+        <div class="top-bar">
+            <div class="top-bar-left">
+                <h1 class="page-title">Habits</h1>
+                <p class="page-subtitle">Track and build positive routines</p>
+            </div>
+            <div class="top-bar-right">
+                <div class="clock-widget">
+                    <div class="time" id="liveTime">14:32</div>
+                    <div class="date" id="liveDate">Tuesday, April 14</div>
+                </div>
+                <div class="notifications-bell">
+                    <i class="fas fa-bell"></i>
+                    <span class="badge">3</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-area">
+            <!-- HABIT TRACKER HEADER -->
+            <div class="habit-tracker-header">
+                <div class="tracker-title">
+                    <h2>Habit Tracker</h2>
+                    <p>Consistency tracking system</p>
+                </div>
+                <div class="tracker-stats">
+                    <div class="tracker-stat">
+                        <span class="tracker-num">8</span>
+                        <span class="tracker-label">Active</span>
+                    </div>
+                    <div class="tracker-stat">
+                        <span class="tracker-num">87%</span>
+                        <span class="tracker-label">Complete</span>
+                    </div>
+                    <div class="tracker-stat">
+                        <span class="tracker-num">23d</span>
+                        <span class="tracker-label">Max Streak</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- HABIT CARDS -->
+            <div class="habits-container">
+                <div class="habit-tracking-card">
+                    <div class="habit-header-section">
+                        <div class="habit-icon-circle"><i class="fas fa-dumbbell"></i></div>
+                        <div class="habit-title-section">
+                            <h3>Exercise</h3>
+                            <p>Daily routine</p>
+                        </div>
+                    </div>
+                    <div class="habit-body-section">
+                        <div class="streak-display">
+                            <span class="streak-badge">12 days</span>
+                        </div>
+                        <div class="week-dots">
+                            <div class="day-check done"></div>
+                            <div class="day-check done"></div>
+                            <div class="day-check done"></div>
+                            <div class="day-check done"></div>
+                            <div class="day-check done"></div>
+                            <div class="day-check done"></div>
+                            <div class="day-check"></div>
+                        </div>
+                        <div class="habit-progress-large">
+                            <div class="progress-track"><div class="progress-bar-fill" style="width: 71%"></div></div>
+                            <span class="progress-text">5/7 this week</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="habit-tracking-card">
+                    <div class="habit-header-section">
+                        <div class="habit-icon-circle"><i class="fas fa-book"></i></div>
+                        <div class="habit-title-section">
+                            <h3>Reading</h3>
+                            <p>Daily session</p>
+                        </div>
+                    </div>
+                    <div class="habit-body-section">
+                        <div class="streak-display">
+                            <span class="streak-badge">8 days</span>
+                        </div>
+                        <div class="week-dots">
+                            <div class="day-check done"></div>
+                            <div class="day-check done"></div>
+                            <div class="day-check done"></div>
+                            <div class="day-check done"></div>
+                            <div class="day-check done"></div>
+                            <div class="day-check done"></div>
+                            <div class="day-check done"></div>
+                        </div>
+                        <div class="habit-progress-large">
+                            <div class="progress-track"><div class="progress-bar-fill" style="width: 86%"></div></div>
+                            <span class="progress-text">6/7 this week</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="habit-tracking-card">
+                    <div class="habit-header-section">
+                        <div class="habit-icon-circle"><i class="fas fa-moon"></i></div>
+                        <div class="habit-title-section">
+                            <h3>Sleep</h3>
+                            <p>Quality tracking</p>
+                        </div>
+                    </div>
+                    <div class="habit-body-section">
+                        <div class="streak-display">
+                            <span class="streak-badge">23 days</span>
+                        </div>
+                        <div class="week-dots">
+                            <div class="day-check done"></div>
+                            <div class="day-check done"></div>
+                            <div class="day-check done"></div>
+                            <div class="day-check done"></div>
+                            <div class="day-check done"></div>
+                            <div class="day-check done"></div>
+                            <div class="day-check done"></div>
+                        </div>
+                        <div class="habit-progress-large">
+                            <div class="progress-track"><div class="progress-bar-fill" style="width: 100%"></div></div>
+                            <span class="progress-text">7/7 this week</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="habit-tracking-card">
+                    <div class="habit-header-section">
+                        <div class="habit-icon-circle"><i class="fas fa-glass-water"></i></div>
+                        <div class="habit-title-section">
+                            <h3>Hydration</h3>
+                            <p>Daily intake</p>
+                        </div>
+                    </div>
+                    <div class="habit-body-section">
+                        <div class="streak-display">
+                            <span class="streak-badge">6 days</span>
+                        </div>
+                        <div class="week-dots">
+                            <div class="day-check done"></div>
+                            <div class="day-check done"></div>
+                            <div class="day-check done"></div>
+                            <div class="day-check done"></div>
+                            <div class="day-check done"></div>
+                            <div class="day-check done"></div>
+                            <div class="day-check"></div>
+                        </div>
+                        <div class="habit-progress-large">
+                            <div class="progress-track"><div class="progress-bar-fill" style="width: 71%"></div></div>
+                            <span class="progress-text">5/7 this week</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
