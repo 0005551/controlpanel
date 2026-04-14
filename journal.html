@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="components.css">
+    <link rel="stylesheet" href="animations.css">
+</head>
+<body>
+    <div class="backdrop-glow"></div>
+
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <button class="sidebar-toggle" id="sidebarToggle"><i class="fas fa-bars"></i></button>
+            <a href="index.html" class="logo">
+                <div class="logo-icon">◆</div>
+                <div class="logo-text">Control<span>OS</span></div>
+            </a>
+        </div>
+
+        <nav class="sidebar-nav">
+            <ul>
+                <li><a href="index.html" class="nav-link"><i class="fas fa-home"></i><span>Dashboard</span></a></li>
+                <li><a href="actions.html" class="nav-link"><i class="fas fa-bolt"></i><span>Actions</span></a></li>
+                <li><a href="habits.html" class="nav-link"><i class="fas fa-ring"></i><span>Habits</span></a></li>
+                <li><a href="money.html" class="nav-link"><i class="fas fa-chart-line"></i><span>Money</span></a></li>
+                <li><a href="analytics.html" class="nav-link"><i class="fas fa-chart-bar"></i><span>Analytics</span></a></li>
+                <li><a href="planner.html" class="nav-link"><i class="fas fa-calendar"></i><span>Planner</span></a></li>
+                <li><a href="journal.html" class="nav-link active"><i class="fas fa-book"></i><span>Journal</span></a></li>
+                <li><a href="focus.html" class="nav-link"><i class="fas fa-eye"></i><span>Focus</span></a></li>
+                <li><a href="profile.html" class="nav-link"><i class="fas fa-user"></i><span>Profile</span></a></li>
+                <li><a href="settings.html" class="nav-link"><i class="fas fa-cog"></i><span>Settings</span></a></li>
+            </ul>
+        </nav>
+
+        <div class="sidebar-footer">
+            <div class="user-profile">
+                <div class="user-avatar"><i class="fas fa-user"></i></div>
+                <div class="user-info">
+                    <div class="user-name">Control User</div>
+                    <div class="user-status"><span class="status-dot"></span>Online</div>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <div class="main-container">
+        <div class="top-bar">
+            <div class="top-bar-left">
+                <h1 class="page-title">Journal</h1>
+                <p class="page-subtitle">Reflections and daily logs</p>
+            </div>
+            <div class="top-bar-right">
+                <div class="clock-widget">
+                    <div class="time" id="liveTime">14:32</div>
+                    <div class="date" id="liveDate">Tuesday, April 14</div>
+                </div>
+                <div class="notifications-bell">
+                    <i class="fas fa-bell"></i>
+                    <span class="badge">3</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-area">
+            <!-- JOURNAL HEADER -->
+            <div class="journal-header">
+                <h2>Daily Journal</h2>
+                <button class="journal-new-btn"><i class="fas fa-plus"></i> New Entry</button>
+            </div>
+
+            <!-- ENTRIES LIST -->
+            <div class="journal-entries">
+                <div class="journal-entry">
+                    <div class="entry-date">
+                        <span class="date-day">14</span>
+                        <span class="date-month">Apr</span>
+                    </div>
+                    <div class="entry-content">
+                        <div class="entry-title">Today's Reflection</div>
+                        <div class="entry-preview">Had a productive day with great team collaboration. Completed most of the planned tasks and made good progress...</div>
+                        <div class="entry-meta">
+                            <span class="entry-mood">😊 Good</span>
+                            <span class="entry-time">2:30 PM</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="journal-entry">
+                    <div class="entry-date">
+                        <span class="date-day">13</span>
+                        <span class="date-month">Apr</span>
+                    </div>
+                    <div class="entry-content">
+                        <div class="entry-title">Challenges Overcome</div>
+                        <div class="entry-preview">Faced some technical challenges but managed to solve them with team support. Feeling accomplished and ready for...</div>
+                        <div class="entry-meta">
+                            <span class="entry-mood">💪 Energized</span>
+                            <span class="entry-time">11:15 AM</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="journal-entry">
+                    <div class="entry-date">
+                        <span class="date-day">12</span>
+                        <span class="date-month">Apr</span>
+                    </div>
+                    <div class="entry-content">
+                        <div class="entry-title">Weekly Planning</div>
+                        <div class="entry-preview">Started the week with clear goals and priorities. Set up the framework for the week ahead...</div>
+                        <div class="entry-meta">
+                            <span class="entry-mood">🎯 Focused</span>
+                            <span class="entry-time">9:00 AM</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
